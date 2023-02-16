@@ -41,8 +41,8 @@ If a participant engages in behavior that violates this code of conduct, the fol
 
 If you think that someone from this working group is violating the code of conduct, or have any other concerns you would like to report, please contact every member of the team. They can be reached by emailing. Every memeber of this team has to share if they receive a such email. The working group currently includes:
 
-- Angela Machado
-- Dalia Ahmad
-- Rithika Nair
+- Angela Machado (angelalopesmachado@gmail.com)
+- Dalia Ahmad (ahmaddalia708@gmail.com)
+- Rithika Nair (rrithikanair@gmail.com)
 - Ece Celik (ece01celik@gmail.com)
 
