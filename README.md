@@ -1,9 +1,24 @@
-# dsci-310-group-05
+# Cannabis Use Prediction Project
+__Contributors:__ Angela Machado, Dalia Ahmad, Ece Celik, Rithika Nair
 
+### Project Summary ###
+This project aims to predict cannabis use based on demographic patterns, personality traits, and nicotine use. A survey collected between 2011 to 2012 of 1885 respondents from the UCI Machine Learning repository was used as the main sample. By using age, gender, education, Big Five personality traits, and nicotine use as predictors, we predicted how likely an individual is to use cannabis. Based on the analysis, we were able to predict an individual's probability of using cannabis with a 79% accuracy rate, using a 5-fold cross-validation and a K-nearest neighbors classification algorithm with 23 neighbors. The findings suggest that the algorithm can be used in the future with a satisfactorily high degree of certainty in regards to its outputs.
 
+### Data Analysis ###
 
+__How to run the analysis:__
+The data analysis should be run in the order stipulated in the analysis file, first importing the necessary libraries, performing the data cleaning and wrangling, followed by exploratory visualisations and finally the classification algorithm with its associated visualisations.
 
+__Dependencies:__
+These are the dependencies needed to run the analysis:
+- tidyverse
+- tidymodels
+- repr
+- dplyr
+- tidyr
 
+__Licences:__
+The license used for this project is the MIT License.
 
 ## Teamwork
 
