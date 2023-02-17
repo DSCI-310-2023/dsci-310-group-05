@@ -24,4 +24,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Docker push
-      run: docker push daahmad/dsci310-dockerfile-practice:latest
+      run: docker push daahmad/dsci-310-group-05:latest
