@@ -1,19 +1,19 @@
 # **Cannabis Use Prediction Project**
-### __Contributors:__ Angela Machado, Dalia Ahmad, Ece Celik, Rithika Nair
+ __Authors:__ Angela Machado, Chris Lee, Daniel Davydova, Jerome Ting
 
-#### ___Note:__ This analysis was original created by Angela Machado, Chris Lee, Daniel Davydova, Jerome Ting for DSCI 100. Please refer [here](/consent/consent.png) for the consent to use this analysis for our project._
+__Contributors:__ Angela Machado, Dalia Ahmad, Ece Celik, Rithika Nair
+
+___Note:__ This analysis was original created by Angela Machado, Chris Lee, Daniel Davydova, Jerome Ting for DSCI 100. Please refer [here](/consent/consent.png) for the consent to use this analysis for our project._
 &nbsp;
 
 ## **Project Summary** ##
 This project aims to predict cannabis use based on demographic patterns, personality traits, and nicotine use. A survey collected between 2011 to 2012 of 1885 respondents from the UCI Machine Learning repository was used as the main sample. By using age, gender, education, Big Five personality traits, and nicotine use as predictors, we predicted how likely an individual is to use cannabis. Based on the analysis, we were able to predict an individual's probability of using cannabis with a 79% accuracy rate, using a 5-fold cross-validation and a K-nearest neighbors classification algorithm with 23 neighbors. The findings suggest that the algorithm can be used in the future with a satisfactorily high degree of certainty in regards to its outputs.
 
-&nbsp;
 
 ## **Report** ##
 
 The analysis report can be found [here](/analysis/Cannabis-Use-Prediction_Analysis.ipynb).
 
-&nbsp;
 
 ## **Usage** ##
 
@@ -28,7 +28,6 @@ We use a Docker container image to make the computational environment for this p
 - In JupyterLab, navigate to and open ```Cannabis-Use-Prediction_Analysis.ipynb```
 - Click __Kernel > Restart and run all__ to run the entire analysis.
 
-&nbsp;
 
 ## __Dependencies:__
 
@@ -39,7 +38,6 @@ These are the dependencies needed to run the analysis:
 - dplyr
 - tidyr
 
-&nbsp;
 
 ## **Licences:** ##
 This project is offered under the [Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/). The software provided in this project is offered under the [MIT open source license](https://opensource.org/license/mit/) . See the [license file](/LICENSE.md) for more information.
