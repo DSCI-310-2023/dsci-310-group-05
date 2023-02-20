@@ -22,10 +22,10 @@ We use a Docker container image to make the computational environment for this p
 - Clone this repository and in the terminal, navigate to the root of this project. 
 - Run the following command in the terminal: 
 
-   ```docker run -p 8888:8888 --rm -v /$pwd:/home/jovyan/work daahmad/dsci-310-group-05```
+   ```docker run --rm --user root -v $(pwd):/opt/notebooks -p 8888:8888 daahmad/dsci-310-group-05```
 
-- Once the container is launched, copy the URL that looks like: ``` http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3``` into the web browser to access JupyterLab.
-- In JupyterLab, navigate to and open ```Cannabis-Use-Prediction_Analysis.ipynb```
+- Once the container is launched, copy the URL from the terminal that looks like: ``` http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3``` into the web browser to access JupyterLab.
+- In JupyterLab, navigate to and upload ```Cannabis-Use-Prediction_Analysis.ipynb``` from the ```analysis``` folder.
 - Click __Kernel > Restart and run all__ to run the entire analysis.
 
 
