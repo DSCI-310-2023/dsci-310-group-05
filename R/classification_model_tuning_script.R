@@ -7,6 +7,7 @@
 #' @param v The number of folds for cross-validation.
 #' 
 #' @return A tibble containing the hyperparameters, metric values, and other information for each model evaluated during cross-validation
+#' @return recipe_obj A recipe object created using the data argument
 #' 
 #' @examples
 #' # Fit and tune k-nearest neighbor classifier
@@ -45,6 +46,6 @@ knn_tune <- function(data = drug_data, neighbors = 1:30, weight_func = "rectangu
     tune_grid(resamples = knn_vfold, grid = knn_grid) %>% 
     collect_metrics()
   
-  return(knn_results)
+  return(list(knn_results = knn_results, recipe_obj = recipe_obj))
 }
 
