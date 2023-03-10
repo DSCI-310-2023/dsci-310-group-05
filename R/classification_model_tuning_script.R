@@ -42,6 +42,6 @@ knn_tune <- function(data, neighbors, weight_func = "rectangular", v) {
     tune_grid(resamples = knn_vfold, grid = knn_grid) %>% 
     collect_metrics()
   
-  return(knn_results)
+  write.csv(grouped, "data/knn_tune.csv")
 }
 
