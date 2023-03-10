@@ -1,50 +1,52 @@
-
-set.seed(2)
-
-library(tidymodels)
-
-#' Tune k-Nearest Neighbor Classifier
+#' Train and Tune k-Nearest Neighbor Classifier
 #'
-#' This function tunes a k-nearest neighbor (KNN) classifier for a binary classification problem using a rectangular weight function. It uses the kknn package to fit the KNN model and the rsample package for cross-validation. The number of neighbors is tuned over a specified range using a grid search approach. The function returns a workflow object that contains the performance metrics for each model trained over the hyperparameter grid.
+#' This function takes a data frame containing the outcome variable and predictor variables,
+#' and trains and tunes a k-nearest neighbor (KNN) classifier using the kknn package. 
+#' The function returns a trained workflow object that can be used to make predictions on 
+#' new data.
 #'
-#' @param data A data frame containing the input data.
-#' @param outcome_var A string indicating the name of the outcome variable in \code{data}.
-#' @param nfolds An integer indicating the number of folds for cross-validation.
+#' @param data A data frame containing the outcome variable and predictor variables.
+#' @param outcome The name of the outcome variable in \code{data}.
 #'
-#' @return A workflow object containing the performance metrics for each model trained over the hyperparameter grid.
+#' @return A trained workflow object containing a tuned KNN classifier.
 #'
-#' @import dplyr
 #' @import kknn
+#' @import dplyr
+#' @import recipes
+#' @import workflowsets
 #' @import rsample
 #'
 #' @examples
 #' data("drug_data")
-#' tune_kknn_classifier(drug_data, "Cannabis", 5)
+#' trained_classifier <- train_and_tune_kknn_classifier(drug_data, "Cannabis")
 #'
 #' @export
-tune_kknn_classifier <- function(data, outcome_var, nfolds) {
-  # Define recipe for data preprocessing
-  recipe <- recipe(as.formula(paste(outcome_var, "~ .")), data = data) %>% 
+train_and_tune_kknn_classifier <- function(data, outcome, nfolds) {
+  # Set seed for reproducibility
+  set.seed(2)
+  
+  # Specify KNN classifier with tuning parameter
+  knn_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = tune()) %>% 
+    set_engine("kknn") %>% 
+    set_mode("classification")
+  
+  # Specify recipe for data pre-processing
+  knn_recipe <- recipe(as.formula(paste(outcome, "~ .")), data = data) %>% 
     step_scale(all_predictors()) %>% 
     step_center(all_predictors())
   
-  # Define cross-validation object
-  cv <- vfold_cv(data, v = nfolds, strata = data[[outcome_var]])
+  # Create cross-validation folds
+  knn_vfold <- vfold_cv(data, v = nfolds, strata = !!sym(outcome))
   
-  # Define hyperparameter grid
-  grid <- tibble(neighbors = seq(1, 30))
+  # Specify grid of tuning parameters
+  knn_grid <- tibble(neighbors = seq(1, 30))
   
-  # Define workflow for model training and hyperparameter tuning
-  workflow <- workflow() %>% 
-    add_recipe(recipe) %>% 
-    add_model(nearest_neighbor(weight_func = "rectangular", neighbors = tune()) %>% 
-                set_engine("kknn") %>% 
-                set_mode("classification")) %>% 
-    tune_grid(resamples = cv, grid = grid) %>% 
+  # Train and tune KNN classifier using workflow
+  knn_workflow <- workflow() %>% 
+    add_recipe(knn_recipe) %>% 
+    add_model(knn_spec) %>% 
+    tune_grid(resamples = knn_vfold, grid = knn_grid) %>% 
     collect_metrics()
   
-  return(workflow)
+  return(knn_workflow)
 }
-
-result <- tune_kknn_classifier(drug_data, "Cannabis", 5)
-
