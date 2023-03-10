@@ -1,5 +1,6 @@
 #' Fit a k-nearest neighbor classifier and tune hyperparameters using cross-validation
 #' 
+#' 
 #' @param data A data frame containing the predictor variables and "Cannabis" response variable
 #' @param neighbors A vector of integers specifying the number of nearest neighbors to consider.
 #' @param weight_func The weight function to use for prediction. 
