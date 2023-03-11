@@ -1,5 +1,5 @@
 library(testthat)
-source("../../R/predict-script.R")
+source("./../R/predict-script.R")
 
 data(mtcars)
 
