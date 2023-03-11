@@ -2,6 +2,7 @@
 #' 
 #' 
 #' @param data A data frame containing the predictor variables and "Cannabis" response variable
+#' @param response_var A string specifying the name of the response variable in the data frame
 #' @param neighbors A vector of integers specifying the number of nearest neighbors to consider.
 #' @param weight_func The weight function to use for prediction. 
 #' @param v The number of folds for cross-validation.
@@ -14,7 +15,7 @@
 #' }
 #' 
 
-knn_tune <- function(data, neighbors, weight_func = "rectangular", v) {
+knn_tune <- function(data, response_var, neighbors, weight_func = "rectangular", v) {
   
   # Define nearest neighbor specification
   knn_spec <- nearest_neighbor(weight_func = weight_func, neighbors = tune()) %>% 
@@ -42,6 +43,6 @@ knn_tune <- function(data, neighbors, weight_func = "rectangular", v) {
     tune_grid(resamples = knn_vfold, grid = knn_grid) %>% 
     collect_metrics()
   
-  write.csv(grouped, "data/knn_tune.csv")
+  write.csv(knn_results, "data/knn_tune.csv")
 }
 
