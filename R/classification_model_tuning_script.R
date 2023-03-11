@@ -2,8 +2,10 @@
 #' Create a nearest neighbor specification object
 #' 
 #' @param weight_func A string specifying the weight function to use.
-#' @param neighbors An integer specifying the number of neighbors to use.
-#' @return A nearest neighbor specification object for use in a workflow.
+#' @param neighbors An integer specifying the number of neighbors to use.s
+#' @examples
+#' create_knn_spec("rectangular")
+#' 
 #' @export
 create_knn_spec <- function(weight_func) {
   spec <- nearest_neighbor(weight_func = weight_func, neighbors = tune()) %>% 
@@ -19,6 +21,10 @@ create_knn_spec <- function(weight_func) {
 #' @param data A dataframe containing the data.
 #' @param response_var A string specifying the name of the response variable.
 #' @return A recipe object for use in a workflow.
+#' @examples
+#' data <- drug_data
+#' create_recipe(data, "Cannabis")
+#' 
 #' @export
 create_recipe <- function(data, response_var) {
   recipe <- recipe(as.formula(paste0(response_var, " ~ .")), data = data) %>% 
@@ -35,6 +41,10 @@ create_recipe <- function(data, response_var) {
 #' @param v An integer specifying the number of folds.
 #' @param strata A string specifying the name of the strata variable, if any.
 #' @return A v-fold cross-validation object for use in a workflow.
+#' @examples
+#' data <- drug_data
+#' create_vfold(data, 5, "Cannabis")
+#'
 #' @export
 create_vfold <- function(data, v, strata) {
   vfold <- vfold_cv(data, v = v, strata = strata)
@@ -47,6 +57,9 @@ create_vfold <- function(data, v, strata) {
 #' @param min_neighbors An integer specifying the minimum number of neighbors to include in the grid.
 #' @param max_neighbors An integer specifying the maximum number of neighbors to include in the grid.
 #' @return A tibble containing the grid of values to tune over.
+#' @examples
+#' create_grid(1, 30)
+#'
 #' @export
 create_grid <- function(min_neighbors, max_neighbors) {
   gridvals <- tibble(neighbors = seq(min_neighbors, max_neighbors))
@@ -62,6 +75,15 @@ create_grid <- function(min_neighbors, max_neighbors) {
 #' @param vfold A v-fold cross-validation object specifying the resampling scheme.
 #' @param gridvals A tibble specifying the grid of values to tune over.
 #' @return A workflow object for the k-NN classification analysis.
+#' @examples
+#' data <- drug_data
+#' response_var <- "Cannabis"
+#' recipe <- create_recipe(data, response_var)
+#' spec <- create_knn_spec("triangular")
+#' vfold <- create_vfold(data, 5, response_var)
+#' gridvals <- create_grid(1, 10)
+#' create_workflow(recipe, spec, vfold, gridvals)
+#' 
 #' @export
 create_workflow <- function(recipe, spec, vfold, gridvals) {
     workflow() %>% 
