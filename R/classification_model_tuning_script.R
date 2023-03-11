@@ -2,12 +2,12 @@
 #' 
 #' 
 #' @param data A data frame containing the predictor variables and "Cannabis" response variable
+#' @param response_var A string specifying the name of the response variable in the data frame
 #' @param neighbors A vector of integers specifying the number of nearest neighbors to consider.
 #' @param weight_func The weight function to use for prediction. 
 #' @param v The number of folds for cross-validation.
 #' 
 #' @return A tibble containing the hyperparameters, metric values, and other information for each model evaluated during cross-validation
-#' @return recipe_obj A recipe object created using the data argument
 #' 
 #' @examples
 #' # Fit and tune k-nearest neighbor classifier
@@ -15,10 +15,7 @@
 #' }
 #' 
 
-knn_tune <- function(data = drug_data, neighbors = 1:30, weight_func = "rectangular", v = 5) {
-  
-  # Set seed for reproducibility
-  set.seed(2)
+knn_tune <- function(data, response_var, neighbors, weight_func = "rectangular", v) {
   
   # Define nearest neighbor specification
   knn_spec <- nearest_neighbor(weight_func = weight_func, neighbors = tune()) %>% 
@@ -26,12 +23,12 @@ knn_tune <- function(data = drug_data, neighbors = 1:30, weight_func = "rectangu
     set_mode("classification")
   
   # Define recipe
-  recipe_obj <- recipe(Cannabis ~ ., data = data) %>% 
+  recipe_obj <- recipe(as.formula(paste0(response_var, "~ .")), data = data) %>% 
     step_scale(all_predictors()) %>% 
     step_center(all_predictors())
   
   # Define cross-validation
-  knn_vfold <- vfold_cv(data, v = v, strata = data$Cannabis)
+  knn_vfold <- vfold_cv(data, v = v, strata = data[[response_var]])
   
   # Define grid of hyperparameters
   knn_grid <- tibble(neighbors = neighbors)
@@ -46,6 +43,6 @@ knn_tune <- function(data = drug_data, neighbors = 1:30, weight_func = "rectangu
     tune_grid(resamples = knn_vfold, grid = knn_grid) %>% 
     collect_metrics()
   
-  return(list(knn_results = knn_results, recipe_obj = recipe_obj))
+  write.csv(knn_results, "data/knn_tune.csv")
 }
 
