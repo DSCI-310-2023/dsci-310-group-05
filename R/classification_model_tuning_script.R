@@ -5,10 +5,12 @@
 #' @param neighbors An integer specifying the number of neighbors to use.
 #' @return A nearest neighbor specification object for use in a workflow.
 #' @export
-create_knn_spec <- function(weight_func, neighbors) {
-  nearest_neighbor(weight_func = weight_func, neighbors = neighbors) %>% 
+create_knn_spec <- function(weight_func) {
+  spec <- nearest_neighbor(weight_func = weight_func, neighbors = tune()) %>% 
     set_engine("kknn") %>% 
-    set_mode("classification")
+    set_mode("classification") 
+    
+    return(spec)
 }
 
 
@@ -19,11 +21,11 @@ create_knn_spec <- function(weight_func, neighbors) {
 #' @return A recipe object for use in a workflow.
 #' @export
 create_recipe <- function(data, response_var) {
-  recipe(as.formula(paste0(response_var, " ~ .")), data = data) %>% 
+  recipe <- recipe(as.formula(paste0(response_var, " ~ .")), data = data) %>% 
     step_scale(all_predictors()) %>% 
-    step_center(all_predictors()) %>%
-    prep() %>%
-    return()
+    step_center(all_predictors()) 
+    
+    return(recipe)
 }
 
 
@@ -35,7 +37,7 @@ create_recipe <- function(data, response_var) {
 #' @return A v-fold cross-validation object for use in a workflow.
 #' @export
 create_vfold <- function(data, v, strata) {
-  vfold_cv(data, v = v, strata = strata)
+  vfold <- vfold_cv(data, v = v, strata = strata)
   return(vfold)
 }
 
@@ -48,6 +50,7 @@ create_vfold <- function(data, v, strata) {
 #' @export
 create_grid <- function(min_neighbors, max_neighbors) {
   gridvals <- tibble(neighbors = seq(min_neighbors, max_neighbors))
+    
   return(gridvals)
 }
 
@@ -61,7 +64,7 @@ create_grid <- function(min_neighbors, max_neighbors) {
 #' @return A workflow object for the k-NN classification analysis.
 #' @export
 create_workflow <- function(recipe, spec, vfold, gridvals) {
-  workflow() %>% 
+    workflow() %>% 
     add_recipe(recipe) %>% 
     add_model(spec) %>% 
     tune_grid(resamples = vfold, grid = gridvals) %>% 
