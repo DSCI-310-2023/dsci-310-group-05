@@ -1,5 +1,5 @@
 library(testthat)
-source("../../R/train-test-script.R")
+source("./../R/train-test-script.R")
 
 # Define test data
 test_data <- data.frame(strata = c("a", "a", "b", "b"), predictor = c("no", "yes", "no", "yes"))

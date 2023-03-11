@@ -16,3 +16,4 @@ predict_drugs_workflow <- function(knn_wf, test_data = testing_drug_data) {
   
   write.csv(pred_data, "data/prediction_data.csv")
 }
+
