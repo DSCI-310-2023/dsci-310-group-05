@@ -1,5 +1,9 @@
 .DS_Store
 
+#.ipynb_checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
 # History files
 .Rhistory
 .Rapp.history
