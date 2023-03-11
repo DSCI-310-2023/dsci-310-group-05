@@ -10,16 +10,6 @@ split_dataset <- function(data_set, strata_variable, predictor) {
     split <- initial_split(data_set, prop = 0.75, strata = strata_variable)
     training_data <- training(split)
     testing_data <- testing(split)
-    
-    
-  
-    #setting predictor as numeric value
-    testing_data <- mutate(testing_data, predictor = str_replace_all(predictor, c("no" = "0", "yes" = "1"))) %>% 
-        mutate(predictor = as.numeric(predictor))
 
     return(list(training_data, testing_data))
-    #return(testing_data)
-  
-   # write.csv(training_data, "./../data/training_data.csv")
-   # write.csv(testing_data, "./../data/testing_data.csv")
 }

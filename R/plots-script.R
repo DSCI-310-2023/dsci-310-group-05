@@ -68,19 +68,19 @@ scatterplot <- function(data, x_var, y_var, color_var, x_label, y_label, color_l
 #' @return  a visualization of the accuracy of the estimates with respect to the number of neighbors
 #' 
 #' @examples 
-#' accuracy_plot(drugs_workflow, neighbors, mean, xlabel = "Number of Neighbors", ylabel = "Accuracy Estimate", title = "Neighbors vs. Accuracy")
+#' accuracy_plot(drugs_workflow, x_label = "Number of Neighbors", y_label = "Accuracy Estimate", plot_title = "Neighbors vs. Accuracy")
 
-accuracy_plot <- function(data, x, y, xlabel = "", ylabel = "", title = ""){
-  options(repr.plot.width = 12, repr.plot.width = 12)
-  
-  accuracy <- filter(data, .metric == "accuracy")
-  
-  acc_plot <- ggplot(accuracy, aes(x = x, y = y)) +
+accuracy_plot <- function(workflow_data, x_label, y_label, plot_title) {
+    options(repr.plot.width = 12, repr.plot.width = 12)
+    accuracy <- filter(workflow_data, .metric == "accuracy")
+    
+    acc_plot <- ggplot(accuracy, aes(x = neighbors, y = mean)) +
     geom_point() +
     geom_line() +
-    labs(x = xlabel, y = ylabel, title = title) +
+    labs(x = x_label, y = y_label, title = plot_title) +
     theme(text = element_text(size = 20)) +
     scale_x_continuous(breaks = c(1:30))
-  
-  return(acc_plot)
+    
+    return(acc_plot)
 }
+

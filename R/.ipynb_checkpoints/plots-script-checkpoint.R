@@ -70,17 +70,32 @@ scatterplot <- function(data, x_var, y_var, color_var, x_label, y_label, color_l
 #' @examples 
 #' accuracy_plot(drugs_workflow, neighbors, mean, xlabel = "Number of Neighbors", ylabel = "Accuracy Estimate", title = "Neighbors vs. Accuracy")
 
-accuracy_plot <- function(data, x, y, xlabel = "", ylabel = "", title = ""){
-  options(repr.plot.width = 12, repr.plot.width = 12)
+# accuracy_plot <- function(data, x, y, xlabel = "", ylabel = "", title = ""){
+#   options(repr.plot.width = 12, repr.plot.width = 12)
   
-  accuracy <- filter(data, .metric == "accuracy")
+#   accuracy <- filter(data, .metric == "accuracy")
   
-  acc_plot <- ggplot(accuracy, aes(x = x, y = y)) +
+#   acc_plot <- ggplot(accuracy, aes(x = x, y = y)) +
+#     geom_point() +
+#     geom_line() +
+#     labs(x = xlabel, y = ylabel, title = title) +
+#     theme(text = element_text(size = 20)) +
+#     scale_x_continuous(breaks = c(1:30))
+  
+#   return(acc_plot)
+# }
+
+accuracy_plot <- function(workflow_data, x_var, y_var, x_label, y_label, plot_title) {
+    options(repr.plot.width = 12, repr.plot.width = 12)
+    accuracy <- filter(workflow_data, .metric == "accuracy")
+    
+    acc_plot <- ggplot(accuracy, aes(x = x_var, y = y_var)) +
     geom_point() +
     geom_line() +
-    labs(x = xlabel, y = ylabel, title = title) +
+    labs(x = x_label, y = y_label, title = plot_title) +
     theme(text = element_text(size = 20)) +
     scale_x_continuous(breaks = c(1:30))
-  
-  return(acc_plot)
+    
+    return(acc_plot)
 }
+
