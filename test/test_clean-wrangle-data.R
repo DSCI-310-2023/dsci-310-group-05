@@ -1,35 +1,30 @@
 library(testthat)
-source("../../R/clean-wrangle-data.R")
+source("../R/clean-wrangle-data.R")
+source("../test/helper_clean-wrangle.R")
 
-# Create sample data for testing
-data <- data.frame(group = c("A", "A", "B", "B", "C"),
-                   value = c(1, 2, 3, 4, 5))
+library(dplyr)
 
-# Define the function to test
-my_grouped_function <- function(data) {
-  group_summary <- data %>%
-    group_by(group) %>%
-    summarize(avg_value = mean(value))
-  return(group_summary)
-}
-
-# Test if function returns a data frame with expected columns
-test_that("my_grouped_function() returns a data frame with expected columns", {
-  result <- my_grouped_function(data)
-  expect_is(result, "data.frame")
-  expect_identical(colnames(result), c("group", "avg_value"))
+# Test output and test if column types are matching
+test_that("wrangle_training_data handles and groups the data accurately", {
+  output <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
+  expect_equal(as.data.frame(output), expected_output)
+  expect_equal(typeof(output$predictor) , typeof(expected_output$predictor))
+  expect_equal(typeof(output$strata_variable) , typeof(expected_output$strata_variable))
+  expect_equal(typeof(output$label) , typeof(expected_output$label))
+  expect_equal(typeof(output$n) , typeof(expected_output$n))
 })
 
-# Test if function groups data correctly
-test_that("my_grouped_function() groups data correctly", {
-  result <- my_grouped_function(data)
-  expected_result <- data.frame(group = c("A", "B", "C"),
-                                avg_value = c(1.5, 3.5, 5))
-  expect_identical(result, expected_result)
+# Test whether the output is a data.frame.
+test_that("wrangle_training_data returns a data.frame", {
+  output1 <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
+  expect_is(output1, "data.frame")
 })
 
-# Test if function calculates average correctly
-test_that("my_grouped_function() calculates average correctly", {
-  result <- my_grouped_function(data)
-  expect_equal(result$avg_value[1], 1.5)
+# Test case for missing group_labels
+test_that("wrangle_training_data handles missing group_labels", {
+  no_labels <- c()
+  output2 <- wrangle_training_data(training_data, predictor, strata_variable, no_labels)
+  expect_identical(output2$label, c())
 })
+
+
