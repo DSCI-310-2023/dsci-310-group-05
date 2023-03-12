@@ -1,6 +1,6 @@
 library(testthat)
-source("../R/clean-wrangle-data.R")
-source("../test/helper_clean-wrangle.R")
+source("./R/clean-wrangle-data.R")
+source("./test/helper_clean-wrangle.R")
 
 library(dplyr)
 
