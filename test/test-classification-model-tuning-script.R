@@ -1,47 +1,94 @@
-
 library(testthat)
+library(tidymodels)
+library(dplyr)
+library(purrr)
+
 source("./R/classification_model_tuning_script.R")
+source("./test/helper_classification-model-tuning-script.R")
 
-# Create a sample data frame with two predictor variables and one response variable
-set.seed(123)
-n <- 100
-drug_data <- data.frame(
-  Cannabis = sample(c("Yes", "No"), size = n, replace = TRUE),
-  Nicotine = rnorm(n),
-  Alcohol = rnorm(n),
-  Gender = sample(c("Male", "Female"), size = n, replace = TRUE)
-)
+#Test create_knn function
 
-# Test case 1: test that the function returns a tibble
-test_that("knn_tune returns a tibble", {
-  result <- knn_tune(data = drug_data, response_var = "Cannabis", neighbors = 1:5, v = 2)
-  expect_is(result, "tbl_df")
+# Test case 1
+test_that("create_knn_spec sets the mode to classification", {
+  spec <- create_knn_spec(weight_func = "rectangular")
+  expect_equal(spec$mode, expected_mode)
 })
 
-# Test case 2: Check if function returns correct number of rows
-test_that("knn_tune() returns correct number of rows", {
-  result <- knn_tune(data = drug_data, response_var = "Cannabis", neighbors = 1:3, v = 3)
-  expect_equal(nrow(result), length(1:3))
+# Test case 2
+test_that("create_knn_spec sets the engine to kknn", {
+  expect_equal(spec$engine, expected_engine, "Expected engine to be kknn")
 })
 
-# Test case 3: Check if function returns correct columns
-test_that("knn_tune() returns correct columns", {
-  result <- knn_tune(data = drug_data, response_var = "Cannabis", neighbors = 1:3, v = 3)
-  expect_identical(colnames(result), c("neighbors", "mean_accuracy", "stddev_accuracy"))
+# Test case 3
+test_that("create_knn_spec returns a model specification object", {
+  expect_s3_class(spec, expected_model_spec)
 })
 
-# Test case 4: Check if function works with different weight functions
-test_that("knn_tune() works with different weight functions", {
-  result1 <- knn_tune(data = drug_data, response_var = "Cannabis", neighbors = 1:3, weight_func = "rectangular", v = 3)
-  result2 <- knn_tune(data = drug_data, response_var = "Cannabis", neighbors = 1:3, weight_func = "triangular", v = 3)
-  expect_identical(result1$neighbors, result2$neighbors)
-  expect_not_identical(result1$mean_accuracy, result2$mean_accuracy)
+-------------------------------------------------------------------------------------
+
+# Test create_recipe function
+
+# Test case 1
+test_that("create_recipe returns a recipe object", {
+  expect_s3_class(recipe, expected_recipe_class)
 })
 
-# Test case 5: Check if function works with different number of folds
-test_that("knn_tune() works with different number of folds", {
-  result1 <- knn_tune(data = drug_data, response_var = "Cannabis",neighbors = 1:3, v = 3)
-  result2 <- knn_tune(data = drug_data, response_var = "Cannabis", neighbors = 1:3, v = 5)
-  expect_identical(result1$neighbors, result2$neighbors)
-  expect_not_identical(result1$mean_accuracy, result2$mean_accuracy)
+# Test case 2
+test_that("create_recipe throws an error if response variable not in dataset", {
+  expect_error(create_recipe(df, "not_in_dataset"))
 })
+
+----------------------------------------------------------------------------------
+
+#Test create_vfold function
+
+#Test case 1 
+test_that("create_vfold returns a valid vfold object", {
+  expect_is(vfold, expected_vfold_class)
+  expect_equal(length(vfold$splits), expected_num_splits)
+})
+
+--------------------------------------------------------------------------------
+
+#Test cases for create_grid
+
+#Test case 1
+test_that("create_grid creates a grid with the correct number of neighbors", {
+  expect_equal(nrow(grid), expected_num_rows_grid)
+})
+
+--------------------------------------------------------------------------------
+#Test cases for create_workflow 
+test_that("create_workflow creates a workflow correctly", {
+
+  # Test case 1
+  expect_s3_class(test_workflow, expected_workflow_class)
+  
+  # Test case 2
+  expect_identical(names(test_workflow$steps), expected_workflow_steps)
+  
+  #Test case 3
+  expect_identical(names(test_workflow$parameters), expected_workflow_parameters)
+  
+  #Test case 4
+  expect_s3_class(test_workflow$model, expected_workflow_model)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
