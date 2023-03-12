@@ -1,4 +1,5 @@
 #function inputs for tests 
+
 df <- data.frame(
   Age = c(3, 5, 6, 7, 8, 9),
   Gender = c(-0.95197, 0.48246, -0.48246, -0.48246, 0.48246, -0.48246),
