@@ -20,7 +20,11 @@ The analysis report can be found [here](/analysis/Cannabis-Use-Prediction_Analys
 We use a Docker container image to make the computational environment for this project reproducible. Follow the steps below to interactively run JupterLab and explore the project:
 
 - Clone this repository and in the terminal, navigate to the root of this project. 
-- Run the following command in the terminal: 
+- First, run the following command in the terminal:
+
+   ```docker pull daahmad/dsci-310-group-05```
+  
+- Next, run the following command in the terminal: 
 
    ```docker run --rm --user root -v $(pwd):/home/jovyan -p 8888:8888 daahmad/dsci-310-group-05```
 
