@@ -39,11 +39,14 @@ We use a Docker container image to make the computational environment for this p
 ## __Dependencies:__
 
 These are the dependencies needed to run the analysis:
-- tidyverse
-- tidymodels
-- repr
-- dplyr
-- tidyr
+- tidyverse=1.3.2
+- tidymodels=1.0.0 
+- repr=1.1.5
+- dplyr=1.0.10
+- tidyr=1.2.1
+- testthat=3.1.6
+- kknn=1.3.1
+- ggplot2=3.4.0
 
 
 ## **Licences:** ##
