@@ -2,7 +2,6 @@
 #' Create a nearest neighbor specification object
 #' 
 #' @param weight_func A string specifying the weight function to use.
-#' @param neighbors An integer specifying the number of neighbors to use.s
 #' @examples
 #' create_knn_spec("rectangular")
 #' 
