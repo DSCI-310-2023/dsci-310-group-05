@@ -10,7 +10,6 @@ initial_data <- function(data, col_names) {
   
   colnames(raw_data) <- col_names
   
-  write.csv(raw_data, "./../data/raw_data.csv")
   return(raw_data)
 }
 
