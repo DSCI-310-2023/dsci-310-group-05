@@ -9,4 +9,5 @@ test_that("predict_drugs_workflow returns the expected output", {
   expect_true(all(result$.pred_class %in% c("no", "yes")))
   #Test case 3
   expect_equal(result$.pred_class, mock_predictions$.pred_class)
+  
 })

@@ -24,7 +24,6 @@ test_recipe <- create_recipe(df, response_var)
 test_spec <- create_knn_spec("rectangular")
 test_vfold <- create_vfold(df, v, response_var)
 test_gridvals <- create_grid(min_neighbors, max_neighbors)
-test_workflow <- create_workflow(test_recipe, test_spec, test_vfold, test_gridvals)
 
 # expected function output
 
@@ -36,7 +35,3 @@ expected_num_splits <- v
 expected_vfold_class <- "vfold_cv"
 expected_num_rows_grid <- max_neighbors - min_neighbors + 1
 
-expected_workflow_class <- "workflow"
-expected_workflow_steps <- c("recipe", "model", "tune", "collect")
-expected_workflow_parameters <- c("neighbors", "weight_func")
-expected_workflow_model <- "kknn"

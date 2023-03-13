@@ -21,10 +21,9 @@ test_that("create_knn_spec sets the engine to kknn", {
 
 # Test case 3
 test_that("create_knn_spec returns a model specification object", {
-  expect_s3_class(spec, expected_model_spec)
+  expect_s3_class(spec, expected_spec_class)
 })
 
--------------------------------------------------------------------------------------
 
 # Test create_recipe function
 
@@ -38,7 +37,6 @@ test_that("create_recipe throws an error if response variable not in dataset", {
   expect_error(create_recipe(df, "not_in_dataset"))
 })
 
-----------------------------------------------------------------------------------
 
 #Test create_vfold function
 
@@ -48,30 +46,12 @@ test_that("create_vfold returns a valid vfold object", {
   expect_equal(length(vfold$splits), expected_num_splits)
 })
 
---------------------------------------------------------------------------------
 
 #Test cases for create_grid
 
 #Test case 1
 test_that("create_grid creates a grid with the correct number of neighbors", {
   expect_equal(nrow(grid), expected_num_rows_grid)
-})
-
---------------------------------------------------------------------------------
-#Test cases for create_workflow 
-test_that("create_workflow creates a workflow correctly", {
-
-  # Test case 1
-  expect_s3_class(test_workflow, expected_workflow_class)
-  
-  # Test case 2
-  expect_identical(names(test_workflow$steps), expected_workflow_steps)
-  
-  #Test case 3
-  expect_identical(names(test_workflow$parameters), expected_workflow_parameters)
-  
-  #Test case 4
-  expect_s3_class(test_workflow$model, expected_workflow_model)
 })
 
 

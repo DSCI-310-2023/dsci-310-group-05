@@ -65,30 +65,3 @@ create_grid <- function(min_neighbors, max_neighbors) {
     
   return(gridvals)
 }
-
-
-#' Create a workflow object for the k-NN classification analysis
-#' 
-#' @param recipe A recipe object specifying the preprocessing steps.
-#' @param spec A nearest neighbor specification object specifying the model.
-#' @param vfold A v-fold cross-validation object specifying the resampling scheme.
-#' @param gridvals A tibble specifying the grid of values to tune over.
-#' @return A workflow object for the k-NN classification analysis.
-#' @examples
-#' data <- drug_data
-#' response_var <- "Cannabis"
-#' recipe <- create_recipe(data, response_var)
-#' spec <- create_knn_spec("triangular")
-#' vfold <- create_vfold(data, 5, response_var)
-#' gridvals <- create_grid(1, 10)
-#' create_workflow(recipe, spec, vfold, gridvals)
-#' 
-#' @export
-create_workflow <- function(recipe, spec, vfold, gridvals) {
-    workflow() %>% 
-    add_recipe(recipe) %>% 
-    add_model(spec) %>% 
-    tune_grid(resamples = vfold, grid = gridvals) %>% 
-    collect_metrics() %>%
-    return()
-}
