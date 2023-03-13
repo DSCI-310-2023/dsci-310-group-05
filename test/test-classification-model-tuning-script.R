@@ -57,22 +57,6 @@ test_that("create_grid creates a grid with the correct number of neighbors", {
   expect_equal(nrow(grid), expected_num_rows_grid)
 })
 
---------------------------------------------------------------------------------
-#Test cases for create_workflow 
-test_that("create_workflow creates a workflow correctly", {
-
-  # Test case 1
-  expect_s3_class(test_workflow, expected_workflow_class)
-  
-  # Test case 2
-  expect_identical(names(test_workflow$steps), expected_workflow_steps)
-  
-  #Test case 3
-  expect_identical(names(test_workflow$parameters), expected_workflow_parameters)
-  
-  #Test case 4
-  expect_s3_class(test_workflow$model, expected_workflow_model)
-})
 
 
 

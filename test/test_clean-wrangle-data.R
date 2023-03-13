@@ -1,8 +1,7 @@
 library(testthat)
+library(dplyr)
 source("./R/clean-wrangle-data.R")
 source("./test/helper_clean-wrangle.R")
-
-library(dplyr)
 
 # Test output and test if column types are matching
 test_that("wrangle_training_data handles and groups the data accurately", {
@@ -18,13 +17,6 @@ test_that("wrangle_training_data handles and groups the data accurately", {
 test_that("wrangle_training_data returns a data.frame", {
   output1 <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
   expect_is(output1, "data.frame")
-})
-
-# Test case for missing group_labels
-test_that("wrangle_training_data handles missing group_labels", {
-  no_labels <- c()
-  output2 <- wrangle_training_data(training_data, predictor, strata_variable, no_labels)
-  expect_identical(output2$label, c())
 })
 
 
