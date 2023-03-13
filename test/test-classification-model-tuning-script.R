@@ -21,10 +21,9 @@ test_that("create_knn_spec sets the engine to kknn", {
 
 # Test case 3
 test_that("create_knn_spec returns a model specification object", {
-  expect_s3_class(spec, expected_model_spec)
+  expect_s3_class(spec, expected_spec_class)
 })
 
--------------------------------------------------------------------------------------
 
 # Test create_recipe function
 
@@ -38,7 +37,6 @@ test_that("create_recipe throws an error if response variable not in dataset", {
   expect_error(create_recipe(df, "not_in_dataset"))
 })
 
-----------------------------------------------------------------------------------
 
 #Test create_vfold function
 
@@ -48,7 +46,6 @@ test_that("create_vfold returns a valid vfold object", {
   expect_equal(length(vfold$splits), expected_num_splits)
 })
 
---------------------------------------------------------------------------------
 
 #Test cases for create_grid
 
@@ -56,7 +53,6 @@ test_that("create_vfold returns a valid vfold object", {
 test_that("create_grid creates a grid with the correct number of neighbors", {
   expect_equal(nrow(grid), expected_num_rows_grid)
 })
-
 
 
 

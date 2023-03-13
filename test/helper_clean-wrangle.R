@@ -1,3 +1,4 @@
+source("./R/clean-wrangle-data.R")
 library(dplyr)
 
 # Defining input data
@@ -9,11 +10,16 @@ predictor <- "predictor"
 strata_variable <- "strata_variable"
 group_labels <- c("group1", "group2", "group3", "group4")
 
+
+output <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
+output1 <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
+
 # Defining expected output
 expected_output <- data.frame(predictor = c("A", "A", "B", "B"),
                               strata_variable = c("X", "Y", "X", "Y"),
                               n = as.integer(c(2, 2, 2, 2)),
                               label = group_labels)
+
 
 
 

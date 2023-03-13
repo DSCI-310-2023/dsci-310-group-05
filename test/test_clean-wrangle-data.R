@@ -5,7 +5,6 @@ source("./test/helper_clean-wrangle.R")
 
 # Test output and test if column types are matching
 test_that("wrangle_training_data handles and groups the data accurately", {
-  output <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
   expect_equal(as.data.frame(output), expected_output)
   expect_equal(typeof(output$predictor) , typeof(expected_output$predictor))
   expect_equal(typeof(output$strata_variable) , typeof(expected_output$strata_variable))
@@ -15,8 +14,6 @@ test_that("wrangle_training_data handles and groups the data accurately", {
 
 # Test whether the output is a data.frame.
 test_that("wrangle_training_data returns a data.frame", {
-  output1 <- wrangle_training_data(training_data, predictor, strata_variable, group_labels)
   expect_is(output1, "data.frame")
 })
-
 
