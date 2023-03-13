@@ -47,6 +47,8 @@ These are the dependencies needed to run the analysis:
 - testthat=3.1.6
 - kknn=1.3.1
 - ggplot2=3.4.0
+- purrr=1.0.1
+- rsample=1.1.1
 
 
 ## **Licences:** ##
