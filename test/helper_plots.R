@@ -1,7 +1,6 @@
-# Helper data for horizontal-hist function
-library(testthat)
 library(ggplot2)
 
+# Defining input data for horizontal-hist function
 test_data_1 <- data.frame(x = c(1, 2, 3, 4), y = c(10, 20, 30, 40), color = c("red", "blue", "green", "red"))
 x_var <- "x"
 y_var <- "y"
@@ -17,7 +16,7 @@ test_data_2 <- data.frame(.metric = rep("accuracy", 30),
                           neighbors = 1:30,
                           mean = rnorm(30))
 
-# Define expected output for horizontal_hist function
+# Defining expected output for horizontal_hist function
 options(repr.plot.width = plot_width, repr.plot.height = plot_height)
 
 expected_hist_plot <- ggplot(test_data_1, aes(x = reorder(x, -y), y = y)) +
@@ -26,7 +25,7 @@ expected_hist_plot <- ggplot(test_data_1, aes(x = reorder(x, -y), y = y)) +
   labs(x = x_label, y = y_label, title = plot_title) +
   theme(text = element_text(size = 20))
 
-# Define expected output for scatterplot function
+# Defining expected output for scatterplot function
 options(repr.plot.width = plot_width, repr.plot.height = plot_height)
 
 expected_scatter_plot <- ggplot(test_data_1, aes(x = x, y = y, color = color)) +
@@ -34,7 +33,7 @@ expected_scatter_plot <- ggplot(test_data_1, aes(x = x, y = y, color = color)) +
   theme(text = element_text(size = 18)) +
   labs(x = "x", y = "y", color = "Color", title = "Test Plot")
 
-# Define expected output for accuracy_plot function
+# Defining expected output for accuracy_plot function
 expected_accuracy_plot <- ggplot(test_data_2, aes(x = neighbors, y = mean)) +
   geom_point() +
   geom_line() +

@@ -25,7 +25,8 @@ test_spec <- create_knn_spec("rectangular")
 test_vfold <- create_vfold(df, v, response_var)
 test_gridvals <- create_grid(min_neighbors, max_neighbors)
 
-# expected function output
+
+# expected function outputs
 
 expected_mode <- "classification"
 expected_engine <- "kknn"

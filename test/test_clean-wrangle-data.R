@@ -1,8 +1,7 @@
 library(testthat)
+library(dplyr)
 source("./R/clean-wrangle-data.R")
 source("./test/helper_clean-wrangle.R")
-
-library(dplyr)
 
 # Test output and test if column types are matching
 test_that("wrangle_training_data handles and groups the data accurately", {
@@ -17,7 +16,4 @@ test_that("wrangle_training_data handles and groups the data accurately", {
 test_that("wrangle_training_data returns a data.frame", {
   expect_is(output1, "data.frame")
 })
-
-
-
 
