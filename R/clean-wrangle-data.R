@@ -6,8 +6,7 @@
 #' @param group_labels list of strings representing the group names
 #' 
 #' @return cleaned and wrangled training data grouped by predictor and strata_variable & add a label column
-#' @examples
-#' wrangle_training_data(drugs, Cannabis, Nicotine, c("group1", "group2"))
+#' @examples wrangle_training_data(drugs, Cannabis, Nicotine, c("group1", "group2"))
 
 wrangle_training_data <- function(training_data, predictor, strata_variable, group_labels){
   

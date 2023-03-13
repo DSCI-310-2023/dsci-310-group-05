@@ -9,3 +9,5 @@ RUN Rscript -e "remotes::install_version('tidyr', repos = 'https://cloud.r-proje
 RUN Rscript -e "remotes::install_version('testthat', repos = 'https://cloud.r-project.org')"
 RUN Rscript -e "remotes::install_version('ggplot2', repos = 'https://cloud.r-project.org')"
 RUN Rscript -e "remotes::install_version('kknn', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "remotes::install_version('rsample', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "remotes::install_version('purrr', repos = 'https://cloud.r-project.org')"

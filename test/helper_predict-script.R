@@ -16,7 +16,6 @@ test_data <- data.frame(
   X3 = c(0.2, 0.4, 0.8)
 )
 
-#
 mock_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = tune()) %>% 
     set_engine("kknn") %>% 
     set_mode("classification")
@@ -37,7 +36,6 @@ result <- predict_drugs_workflow(mock_knn_wf, test_data)
 mock_predictions <- predict(mock_knn_wf, test_data)
 
 #expected outputs
-
 expected_columns <- c(".pred_class", "X1", "X2", "X3")
 expected_results <- c("no", "yes")
 expected_predictions <- mock_predictions$.pred_class

@@ -26,7 +26,8 @@ test_vfold <- create_vfold(df, v, response_var)
 test_gridvals <- create_grid(min_neighbors, max_neighbors)
 test_workflow <- create_workflow(test_recipe, test_spec, test_vfold, test_gridvals)
 
-# expected function output
+
+# expected function outputs
 
 expected_mode <- "classification"
 expected_engine <- "kknn"
