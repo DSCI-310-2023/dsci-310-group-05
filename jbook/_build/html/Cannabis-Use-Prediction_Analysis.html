@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Cannabis Use Prediction &#8212; Cannabis Use Prediction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Cannabis-Use-Prediction_Analysis';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Cannabis Use Prediction</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Cannabis Use Prediction
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Cannabis-Use-Prediction_Analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cannabis Use Prediction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Cannabis Use Prediction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong>Summary</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-results"><strong>Methods &amp; Results</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizations">Visualizations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion"><strong>Discussion</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-findings">Summary of findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-findings">Evaluation of findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact">Impact</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references"><strong>References</strong></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="cannabis-use-prediction">
+<h1><strong>Cannabis Use Prediction</strong><a class="headerlink" href="#cannabis-use-prediction" title="Permalink to this headline">#</a></h1>
+</section>
+<section id="summary">
+<h1><strong>Summary</strong><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h1>
+<p>This project aims to predict cannabis use based on demographic patterns, personality traits, and nicotine use. A survey collected between 2011 to 2012 of 1885 respondents from the UCI Machine Learning repository was used as the main sample. By using age, gender, education, Big Five personality traits, and nicotine use as predictors, we predicted how likely an individual is to use cannabis. Based on the analysis, we were able to predict an individual’s probability of using cannabis with a 81% accuracy rate, using a 5-fold cross-validation and a K-nearest neighbors classification algorithm with 23 neighbors. The findings suggest that the algorithm can be used in the future with a satisfactorily high degree of certainty in regards to its outputs.</p>
+</section>
+<section id="introduction">
+<h1><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<p>Cannabis is a drug derived from the plant Cannabis. Commonly smoked, it can alter mental and physical states. With more and more governments around the globe legalizing recreational and/or medical cannabis use in recent years, its popularity has surged.<br />
+Meanwhile, nicotine is commonly consumed by smoking and alters the mood. Given that nicotine is consumed in a similar way and also in a similar context as cannabis, we wonder if there is a relationship between the use of those drugs. This provokes the idea of determining what demographic patterns such as age and ethnicity there are among the people who have followed this trend.  Furthermore, personality traits, specifically those in the Five Factor Model of personality (i.e. openness, conscientiousness, extraversion, agreeableness, and neuroticism) have been shown to contribute to a person’s drug usage.
+According to Digman (1990), these traits can be described as follows: openness refers to a preference for novelty, conscientiousness explains one’s tendency to be organized and careful, extraversion refers to one’s preference for being in the company of others, agreeableness is a measure of one’s level of agreement with others and neuroticism indicates a predisposition to experience stress and negative emotions. Marijuana use is commonly seen in people having high openness (Oscore), low agreeableness (Ascore), low extraversion (Escore) and average neuroticism (Nscore), whereas smokers in general have a higher neuroticism (Nscore), lower agreeableness (Ascore), and lower conscientiousness (Cscore) (Terracciano et al. , 2008). Furthermore, it has been found that a high level of neuroticism (Nscore) and low scores on agreeableness (Ascore) and conscientiousness (Cscore) are associated with addictive behaviour – these individuals have been described as more likely to experience negative emotions (high neuroticism), more likely to act on impulses, and engage in careless behaviour (low conscientiousness), as well as be more likely to stick to their own opinions (low agreeableness) (Dash et al., 2019).</p>
+<p>Thus, we pose the question, can we predict cannabis use based on demographics, the Big Five personality traits, and nicotine use?
+We chose to use the drug consumption dataset from the UCI Machine Learning repository. The dataset is a survey collected between 2011 to 2012 of 1885 respondents questioned about their usage of 18 drugs (Fehrman et al. 2017). The survey also collected information about their personality (NEO-FFI-R, BIS-11, ImpSS) and demographics (level of education, age, country of residence, ethnicity, and gender).</p>
+</section>
+<section id="methods-results">
+<h1><strong>Methods &amp; Results</strong><a class="headerlink" href="#methods-results" title="Permalink to this headline">#</a></h1>
+<p>We conducted our data analysis by using demographics (columns Age, Gender, Education),  scores of each of the Big Five personality traits (columns Oscore, Cscore, Escore, Ascore, Nscore), and nicotine use (column Nicotine) as the predictors. Based on these variables, we attempted to predict how likely an individual is to use cannabis (column Cannabis), our target variable.
+We chose not to use Ethnicity, Country, BIS-11, ImpSS, and the other drugs’ consumptions as predictors and only focused on nicotine usage. We decided to omit ethnicity and country because the data set included a very limited variety of answers in those two variables (e.g. far too often returning White for ethnicity). Furthermore, since most of the literature we found about the relationship between drug use and personality included only Big Five Personality traits, we opted for omitting the other measures of personality. In using 8 predictors, we aimed to balance obtaining a meaningful insight from our data (by increasing our number of predictors) while also limiting the amount of variables to simplify the scope of our report (by decreasing our number of predictors). Previous research has shown correlations between personality and drug usage and thus, we believe that the Big Five Personality Traits, prior nicotine use, and demographics like age and gender would certainly play a role in cannabis use.
+Lastly, in order to perform a more focused analysis, we decided to choose only two drugs to concentrate on: nicotine and cannabis. As mentioned before, this choice was guided by the fact that these two drugs are similar in terms of context and method of use.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 32</caption>
+<thead>
+	<tr><th></th><th scope=col>ID</th><th scope=col>Age</th><th scope=col>Gender</th><th scope=col>Education</th><th scope=col>Country</th><th scope=col>Ethnicity</th><th scope=col>Nscore</th><th scope=col>Escore</th><th scope=col>Oscore</th><th scope=col>Ascore</th><th scope=col>⋯</th><th scope=col>Ecstasy</th><th scope=col>Heroin</th><th scope=col>Ketamine</th><th scope=col>Legalh</th><th scope=col>LSD</th><th scope=col>Meth</th><th scope=col>Mushrooms</th><th scope=col>Nicotine</th><th scope=col>Semer</th><th scope=col>VSA</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>⋯</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>2</td><td>-0.07854</td><td>-0.48246</td><td> 1.98437</td><td> 0.96082</td><td>-0.31685</td><td>-0.67825</td><td> 1.93886</td><td> 1.43533</td><td> 0.76096</td><td>⋯</td><td>CL4</td><td>CL0</td><td>CL2</td><td>CL0</td><td>CL2</td><td>CL3</td><td>CL0</td><td>CL4</td><td>CL0</td><td>CL0</td></tr>
+	<tr><th scope=row>2</th><td>3</td><td> 0.49788</td><td>-0.48246</td><td>-0.05921</td><td> 0.96082</td><td>-0.31685</td><td>-0.46725</td><td> 0.80523</td><td>-0.84732</td><td>-1.62090</td><td>⋯</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL1</td><td>CL0</td><td>CL0</td><td>CL0</td></tr>
+	<tr><th scope=row>3</th><td>4</td><td>-0.95197</td><td> 0.48246</td><td> 1.16365</td><td> 0.96082</td><td>-0.31685</td><td>-0.14882</td><td>-0.80615</td><td>-0.01928</td><td> 0.59042</td><td>⋯</td><td>CL0</td><td>CL0</td><td>CL2</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL2</td><td>CL0</td><td>CL0</td></tr>
+	<tr><th scope=row>4</th><td>5</td><td> 0.49788</td><td> 0.48246</td><td> 1.98437</td><td> 0.96082</td><td>-0.31685</td><td> 0.73545</td><td>-1.63340</td><td>-0.45174</td><td>-0.30172</td><td>⋯</td><td>CL1</td><td>CL0</td><td>CL0</td><td>CL1</td><td>CL0</td><td>CL0</td><td>CL2</td><td>CL2</td><td>CL0</td><td>CL0</td></tr>
+	<tr><th scope=row>5</th><td>6</td><td> 2.59171</td><td> 0.48246</td><td>-1.22751</td><td> 0.24923</td><td>-0.31685</td><td>-0.67825</td><td>-0.30033</td><td>-1.55521</td><td> 2.03972</td><td>⋯</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL6</td><td>CL0</td><td>CL0</td></tr>
+	<tr><th scope=row>6</th><td>7</td><td> 1.09449</td><td>-0.48246</td><td> 1.16365</td><td>-0.57009</td><td>-0.31685</td><td>-0.46725</td><td>-1.09207</td><td>-0.45174</td><td>-0.30172</td><td>⋯</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL0</td><td>CL6</td><td>CL0</td><td>CL0</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Table 1. Summary table of the entire dataset</p>
+<p>Now, we see that the drug usage is denoted as follows:<br />
+CL0: never used the drug<br />
+CL1: used the drug over a decade ago;<br />
+CL2: used the drug in the last decade;<br />
+CL3: used the drug in the last year;<br />
+CL4: used the drug in the last month;<br />
+CL5: used the drug in the last week;<br />
+CL6: used the drug in the last day.</p>
+<p>We assume that someone who used the drug more than a year ago is not to be considered a user, so we will mutate the values CL0, CL1, and CL2 to no (does not use) and the rest to yes (used recently/still using).</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>Age</th><th scope=col>Gender</th><th scope=col>Nscore</th><th scope=col>Escore</th><th scope=col>Oscore</th><th scope=col>Ascore</th><th scope=col>Nicotine</th><th scope=col>Cannabis</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>-0.07854</td><td>-0.48246</td><td>-0.67825</td><td> 1.93886</td><td> 1.43533</td><td> 0.76096</td><td>yes</td><td>yes</td></tr>
+	<tr><th scope=row>2</th><td> 0.49788</td><td>-0.48246</td><td>-0.46725</td><td> 0.80523</td><td>-0.84732</td><td>-1.62090</td><td>no </td><td>yes</td></tr>
+	<tr><th scope=row>3</th><td>-0.95197</td><td> 0.48246</td><td>-0.14882</td><td>-0.80615</td><td>-0.01928</td><td> 0.59042</td><td>no </td><td>no </td></tr>
+	<tr><th scope=row>4</th><td> 0.49788</td><td> 0.48246</td><td> 0.73545</td><td>-1.63340</td><td>-0.45174</td><td>-0.30172</td><td>no </td><td>yes</td></tr>
+	<tr><th scope=row>5</th><td> 2.59171</td><td> 0.48246</td><td>-0.67825</td><td>-0.30033</td><td>-1.55521</td><td> 2.03972</td><td>yes</td><td>no </td></tr>
+	<tr><th scope=row>6</th><td> 1.09449</td><td>-0.48246</td><td>-0.46725</td><td>-1.09207</td><td>-0.45174</td><td>-0.30172</td><td>yes</td><td>no </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Table 2. Summary table of the dataset used in the analysis</p>
+<p>We used set.seed(1) to make sure results are reproducible. We then split the data into a training and a testing set (75% training, 25% testing), this gives us enough data to train our classifier with, while still giving us 470 testing variables.
+Furthermore, since nicotine will be used as a predictor, we want the testing set to have nicotine as a numeric variable.</p>
+<p><strong>Data cleaning and wrangling</strong></p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`summarise()` has grouped output by &#39;Nicotine&#39;. You can override using the `.groups` argument.
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A grouped_df: 4 × 4</caption>
+<thead>
+	<tr><th scope=col>Nicotine</th><th scope=col>Cannabis</th><th scope=col>n</th><th scope=col>label</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>no </td><td>yes</td><td>147</td><td>Neither      </td></tr>
+	<tr><td>no </td><td>no </td><td>467</td><td>Cannabis only</td></tr>
+	<tr><td>yes</td><td>yes</td><td>602</td><td>Nicotine only</td></tr>
+	<tr><td>yes</td><td>no </td><td>196</td><td>Both         </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Table 3. Table of the number of individuals (n) that fall into each label</p>
+<section id="visualizations">
+<h2>Visualizations<a class="headerlink" href="#visualizations" title="Permalink to this headline">#</a></h2>
+<p>First, we are interested in understanding the pattern of cannabis and nicotine consumption in our sample.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/217f7da6e8256b75b81954a287f5f9a8c5ef58e64a1008868300b7ceb664e329.png" src="_images/217f7da6e8256b75b81954a287f5f9a8c5ef58e64a1008868300b7ceb664e329.png" />
+</div>
+</div>
+<p>Figure 1. Horizontal histogram of Nicotine usage vs Cannabis usage.</p>
+<p>Another relationship that we are interested in exploring is how the personality trait “Openness”, which measures how willing people are to try new things, plays into marijuana and nicotine consumption. Here, we will make a new column called rate to express the percentage of each group that uses cannabis, as the data has been standardized and looking at raw marijuana user data will simply give us a normal distribution.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/e991bf8e0a76dc2de7f240e5ce56fe45dec30977e4e3ba2e474ddab539e02800.png" src="_images/e991bf8e0a76dc2de7f240e5ce56fe45dec30977e4e3ba2e474ddab539e02800.png" />
+</div>
+</div>
+<p>Figure 2. Scatter plot of cannabis use % vs openness. Openness is the standardized personality Oscore.</p>
+<p>We see that the rate of cannabis and nicotine users increases with larger openness scores, and we can also see that there are more people that use both nicotine and cannabis than people who use strictly only cannabis (more blue than red data points).</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>Age</th><th scope=col>Gender</th><th scope=col>Nscore</th><th scope=col>Escore</th><th scope=col>Oscore</th><th scope=col>Ascore</th><th scope=col>Nicotine</th><th scope=col>Cannabis</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>3</th><td>-0.95197</td><td> 0.48246</td><td>-0.14882</td><td>-0.80615</td><td>-0.01928</td><td> 0.59042</td><td>0</td><td>no</td></tr>
+	<tr><th scope=row>5</th><td> 2.59171</td><td> 0.48246</td><td>-0.67825</td><td>-0.30033</td><td>-1.55521</td><td> 2.03972</td><td>1</td><td>no</td></tr>
+	<tr><th scope=row>6</th><td> 1.09449</td><td>-0.48246</td><td>-0.46725</td><td>-1.09207</td><td>-0.45174</td><td>-0.30172</td><td>1</td><td>no</td></tr>
+	<tr><th scope=row>7</th><td> 0.49788</td><td>-0.48246</td><td>-1.32828</td><td> 1.93886</td><td>-0.84732</td><td>-0.30172</td><td>0</td><td>no</td></tr>
+	<tr><th scope=row>8</th><td> 0.49788</td><td> 0.48246</td><td> 0.62967</td><td> 2.57309</td><td>-0.97631</td><td> 0.76096</td><td>1</td><td>no</td></tr>
+	<tr><th scope=row>9</th><td> 1.82213</td><td>-0.48246</td><td>-0.24649</td><td> 0.00332</td><td>-1.42424</td><td> 0.59042</td><td>1</td><td>no</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Table 4. Table of used predictors with Nicotine standardized, where Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.</p>
+</section>
+<section id="classification">
+<h2>Classification<a class="headerlink" href="#classification" title="Permalink to this headline">#</a></h2>
+<p>Firstly, we must tune our classifier in order to find the optimal number of neighbours to be used in our model.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">source</span><span class="p">(</span><span class="s2">&quot;./../R/classification_model_tuning_script.R&quot;</span><span class="p">):</span> <span class="o">./../</span><span class="n">R</span><span class="o">/</span><span class="n">classification_model_tuning_script</span><span class="o">.</span><span class="n">R</span><span class="p">:</span><span class="mi">57</span><span class="p">:</span><span class="mi">0</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">end</span> <span class="n">of</span> <span class="nb">input</span>
+<span class="mi">55</span><span class="p">:</span>     
+<span class="mi">56</span><span class="p">:</span>   <span class="k">return</span><span class="p">(</span><span class="n">gridvals</span><span class="p">)</span>
+   <span class="o">^</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">source</span><span class="p">(</span><span class="s2">&quot;./../R/classification_model_tuning_script.R&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Table 5. Table of  accuracy estimates and standard error outputs corresponding to a few different values of K-neighbours.</p>
+<div class="cell tag_remove_input docutils container">
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>── <span class=" -Color -Color-Bold">Attaching core tidyverse packages</span> ──────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">dplyr    </span> 1.1.0     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">readr    </span> 2.1.4
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">forcats  </span> 1.0.0     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">stringr  </span> 1.5.0
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">ggplot2  </span> 3.4.1     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">tibble   </span> 3.1.8
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">lubridate</span> 1.9.2     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">tidyr    </span> 1.3.0
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">purrr    </span> 1.0.1     
+── <span class=" -Color -Color-Bold">Conflicts</span> ────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<span class=" -Color -Color-Red">✖</span> <span class=" -Color -Color-Blue">dplyr</span>::<span class=" -Color -Color-Green">filter()</span> masks <span class=" -Color -Color-Blue">stats</span>::filter()
+<span class=" -Color -Color-Red">✖</span> <span class=" -Color -Color-Blue">dplyr</span>::<span class=" -Color -Color-Green">lag()</span>    masks <span class=" -Color -Color-Blue">stats</span>::lag()
+<span class=" -Color -Color-Cyan">ℹ</span> Use the conflicted package (<span class=" -Color -Color-Blue">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="n">workflow_data</span><span class="p">,</span> <span class="o">.</span><span class="n">metric</span> <span class="o">==</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;drugs_workflow&#39;</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">accuracy_plot</span><span class="p">(</span><span class="n">drugs_workflow</span><span class="p">,</span> <span class="n">x_label</span> <span class="o">=</span> <span class="s2">&quot;Number of Neighbors&quot;</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">y_label</span> <span class="o">=</span> <span class="s2">&quot;Accuracy Estimate&quot;</span><span class="p">,</span> <span class="n">plot_title</span> <span class="o">=</span> <span class="s2">&quot;Neighbors vs. Accuracy&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="nb">filter</span><span class="p">(</span><span class="n">workflow_data</span><span class="p">,</span> <span class="o">.</span><span class="n">metric</span> <span class="o">==</span> <span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Figure 3. Plot of accuracy estimate versus number of neighbours. Mean accuracy in % for different values of K-neighbours. K = 23 and K = 24 yield the highest accuracies, and after K exceeds 24, accuracy starts to decline.</p>
+<p>From the graph plotted in Figure 8, we can see that the numbers of neighbours that give us the highest mean accuracy is 23 and 24. Because the drop in accuracy from 24 to 25 is much greater than the drop from 23 to 22, we have decided to use 23 as our K. It should be noted that using some other values for K would be just as reasonable in this case, e.g. 21, since the difference in accuracy is less than 1%.</p>
+<div class="cell tag_remove_input docutils container">
+</div>
+<p>Table 6. Table of prediction outputs for cannabis use. Predictors except Nicotine are scaled and therefore do not provide a clear indication of what predictor values contribute to suggesting that someone would use/not use cannabis. Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.</p>
+<p>Now, we pull the final accuracy rate for our classifier.</p>
+<div class="cell tag_remove_input docutils container">
+</div>
+<p>The result is an accuracy of approximately 0.809 or 80.9%.</p>
+</section>
+</section>
+<section id="discussion">
+<h1><strong>Discussion</strong><a class="headerlink" href="#discussion" title="Permalink to this headline">#</a></h1>
+<section id="summary-of-findings">
+<h2>Summary of findings<a class="headerlink" href="#summary-of-findings" title="Permalink to this headline">#</a></h2>
+<p>By training our model by performing a 5-fold cross-validation and using 23 as the number of neighbours in our K-nearest neighbours classification algorithm, we were able to predict one’s probability of using Cannabis based on age, gender, education and personality scores with a 80.9% accuracy.</p>
+</section>
+<section id="evaluation-of-findings">
+<h2>Evaluation of findings<a class="headerlink" href="#evaluation-of-findings" title="Permalink to this headline">#</a></h2>
+<p>From our analysis, we expected to find that our predictors as a whole would be able to accurately classify someone’s likelihood to be a cannabis user. This was expected due to the fact that all of our predictors have been linked to cannabis use in past research, in particular, personality traits such as Openness and Agreeableness. Previous research has shown that there is a correlation between personality and drug use (Terracciano et al, 2008). The use of the predictor of nicotine, as well as age has also been documented where peer influence in adolescents has also been shown, where nicotine and cannabis were consumed in conjunction with each (Harold et al 2021).</p>
+<p>What we found matched our forecast: we were able to predict a person’s probability of using cannabis with a 79% accuracy rate. Even though this rate is not as accurate as it has been in other studies and also not as high as we initially hoped, we believe it is high enough for us to say that our algorithm can be used in the future with a satisfactorily high degree of certainty in regards to its outputs.</p>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">#</a></h2>
+<p>Despite our findings, there are a few notable shortcomings, namely that we cannot deduce how much one variable alone, for example, nicotine use, affects predicting cannabis use; if we were interested in analyzing that, we would have to make many, many classifications with one variable paired with cannabis use at a time, which unfortunately would not be very practical. Additionally, another flaw, although to a lesser extent would be that our data is somewhat large and we have many predictors, so in choosing to use K-nn classification (which does not perform well in those conditions), our model’s accuracy may have been hindered. Lastly, it’s also important to remember that this data was collected mainly from Western countries such as the UK and the US, which likely impact how generalizable our model will be. Thus, if we decide to use this same algorithm with a data set from a non-Western origin, we must be extremely cautious when evaluating the results.</p>
+</section>
+<section id="impact">
+<h2>Impact<a class="headerlink" href="#impact" title="Permalink to this headline">#</a></h2>
+<p>By identifying potential predictors for cannabis use such as personality traits or demographics, this may lead to impacts like being able to identify potential marijuana users, as well as aid in public health modeling and future policy-making regarding Cannabis. This can also potentially spread awareness and education of the drug across communities experiencing drug-use crises.</p>
+<p>Our findings may also lead to future questions e.g. Are the types of people most likely to use Cannabis also likely to use stronger, or possibly illicit drugs? Do the type of people unlikely to use Cannabis not use any other drugs, or do they prefer some other drug, and if so, which one(s)? Is the likelihood to use a certain drug strongly linked to other demographic factors such as income or country of origin? Finding the answers to these questions may help countries to not only shape their internal approaches to drug-related public policies but also better inform international committees, such as the United Nations Office on Drugs and Crime, on their policy recommendations.</p>
+</section>
+</section>
+<section id="references">
+<h1><strong>References</strong><a class="headerlink" href="#references" title="Permalink to this headline">#</a></h1>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Cannabis Use Prediction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary"><strong>Summary</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-results"><strong>Methods &amp; Results</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizations">Visualizations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification">Classification</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion"><strong>Discussion</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-findings">Summary of findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-of-findings">Evaluation of findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#impact">Impact</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references"><strong>References</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Angela Machado, Chris Lee, Daniel Davydova, & Jerome Ting
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
