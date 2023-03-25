@@ -52,5 +52,5 @@ create_vfold <- function(data, v, strata) {
 
 create_grid <- function(min_neighbors, max_neighbors) {
   gridvals <- tibble(neighbors = seq(min_neighbors, max_neighbors))
-    
   return(gridvals)
+}
