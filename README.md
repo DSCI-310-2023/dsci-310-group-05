@@ -22,13 +22,21 @@ We use a Docker container image to make the computational environment for this p
 - Clone this repository and in the terminal, navigate to the root of this project. 
 - First, run the following command in the terminal:
 
-   ```docker pull daahmad/dsci-310-group-05```
+   ```
+   docker pull daahmad/dsci-310-group-05
+   ```
   
 - Next, run the following command in the terminal: 
 
-   ```docker run --rm --user root -v $(pwd):/home/jovyan -p 8888:8888 daahmad/dsci-310-group-05```
+   ```
+   docker run --rm --user root -v $(pwd):/home/jovyan -p 8888:8888 daahmad/dsci-310-group-05
+   ```
 
-- Once the container is launched, copy the URL from the terminal that looks like: ``` http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3``` into the web browser to access JupyterLab.
+- Once the container is launched, copy the URL from the terminal that looks like: 
+``` 
+http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3
+``` 
+into the web browser to access JupyterLab.
 - You can now access the entire project
 
 #### *To run the analysis within JupyterLab*
