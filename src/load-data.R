@@ -3,11 +3,11 @@
 
 doc <- "This script downloads the data from the internet and saves it locally.
 
-Usage: src/load-data.R --url=<url> --out_dir=<out_dir>
+Usage: src/load-data.R --url=<url> --dest_raw_data=<file_path>
 
 Options:
-    --url=<url>               Url to download data
-    --out_dir=<out_dir>       Path of where to save the data
+    --url=<url>                       Url to download data
+    --dest_raw_data=<file_path>       Path to where the raw_data will be saved (including filename)
     "
 
 
@@ -24,4 +24,4 @@ colnames(data) <- c("ID", "Age", "Gender", "Education", "Country", "Ethnicity",
                     "LSD", "Meth", "Mushrooms", "Nicotine", "Semer", "VSA")
 
 
-write.csv(data, opt$out_dir, row.names = FALSE)
+write.csv(data, opt$dest_raw_data, row.names = FALSE)
