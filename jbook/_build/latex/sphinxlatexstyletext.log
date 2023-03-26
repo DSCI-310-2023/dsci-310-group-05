@@ -1,0 +1,1041 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.3.15)  25 MAR 2023 00:27
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**sphinxlatexstyletext.sty
+(./sphinxlatexstyletext.sty
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
+File: sphinxlatexstyletext.sty 2021/12/06 text styling
+
+! You can't use `\spacefactor' in vertical mode.
+\@->\spacefactor 
+                 \@m {}
+l.107 \@
+        namedef{sphinx@u2500}% BOX DRAWINGS LIGHT HORIZONTAL
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.107 \@
+        namedef{sphinx@u2500}% BOX DRAWINGS LIGHT HORIZONTAL
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.107 \@
+        namedef{sphinx@u2500}% BOX DRAWINGS LIGHT HORIZONTAL
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 107.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 107.
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+I was expecting to see \hbox or \vbox or \copy or \box or
+something like that. So you might find something missing in
+your output. But keep trying; you can fix this later.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+! A <box> was supposed to be here.
+<to be read again> 
+                   \unhbox 
+l.110 ...                \@width\spx@bd@width\vss}
+                                                  }%
+(That makes 100 errors; please try again.) 
+Here is how much of TeX's memory you used:
+ 65 strings out of 477984
+ 1336 string characters out of 5837741
+ 1849382 words of memory out of 5000000
+ 20361 multiletter control sequences out of 15000+600000
+ 512287 words of font info for 32 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 36i,2n,68p,120b,84s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+!  ==> Fatal error occurred, no output PDF file produced!

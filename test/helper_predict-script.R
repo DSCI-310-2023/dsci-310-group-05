@@ -39,3 +39,4 @@ mock_predictions <- predict(mock_knn_wf, test_data)
 expected_columns <- c(".pred_class", "X1", "X2", "X3")
 expected_results <- c("no", "yes")
 expected_predictions <- mock_predictions$.pred_class
+
