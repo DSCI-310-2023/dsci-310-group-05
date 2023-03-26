@@ -17,7 +17,7 @@ results/cannabis_and_nicotine_graph.png results/openness_and_cannabis_graph.png:
 
 # Modelling
 data/standardized_training_data.csv data/drugs_workflow_data.csv results/neighbors_and_accuracy_graph.png data/results_data.csv: src/modelling.R
-	Rscript src/modelling.R --training_data_path=data/training_data.csv --testing_data_path=data/testing_data.csv --dest_std_training_data=data/standardized_training_data.csv --dest_workflow_data=data/drugs_workflow_data.csv --fig_out_dir=results/neighbors_and_accuracy_graph.png --dest_results_data=data/results_data.csv 
+	Rscript src/modelling.R --training_data_path=data/training_data.csv --testing_data_path=data/testing_data.csv --dest_std_training_data=data/standardized_training_data.csv --dest_workflow_data=data/drugs_workflow_data.csv --fig_out_dir=results/ --dest_results_data=data/results_data.csv 
 
 #accuracy
 data/accuracy.csv: src/findings.R
