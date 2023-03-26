@@ -1,7 +1,4 @@
 library(testthat)
-library(tidymodels)
-library(dplyr)
-library(purrr)
 
 source("./R/classification_model_tuning_script.R")
 source("./test/helper_classification-model-tuning-script.R")

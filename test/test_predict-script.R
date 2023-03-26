@@ -1,5 +1,4 @@
 library(testthat)
-library(tidymodels)
 
 source("./R/predict-script.R")
 source("./test/helper_predict-script.R")
