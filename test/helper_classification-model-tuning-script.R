@@ -1,4 +1,4 @@
-#function inputs for tests 
+# function inputs for tests
 
 df <- data.frame(
   Age = c(3, 5, 6, 7, 8, 9),
@@ -11,28 +11,37 @@ df <- data.frame(
   Cannabis = c("no", "no", "no", "no", "no", "no")
 )
 
-v = 5
+v_good <- 5
+v_small <- 1
+v_string <- "five"
 min_neighbors <- 5
 max_neighbors <- 10
 response_var <- "Cannabis"
-grid <- create_grid(min_neighbors, max_neighbors)
-spec <- create_knn_spec(weight_func = "rectangular")
-recipe <- create_recipe(df, response_var)
-vfold <- create_vfold(df, v, response_var)
+not_response_var <- "Test"
+test_grid <- tibble::tibble(neighbors = seq(min_neighbors, max_neighbors))
+test_spec <- parsnip::nearest_neighbor(
+  weight_func = "rectangular",
+  neighbors = tune()
+) %>%
+  parsnip::set_engine("kknn") %>%
+  parsnip::set_mode("classification")
 
-test_recipe <- create_recipe(df, response_var)
-test_spec <- create_knn_spec("rectangular")
-test_vfold <- create_vfold(df, v, response_var)
-test_gridvals <- create_grid(min_neighbors, max_neighbors)
+test_recipe <- recipes::recipe(as.formula(paste0(response_var, " ~ .")),
+  data = df
+) %>%
+  recipes::step_scale(all_predictors()) %>%
+  recipes::step_center(all_predictors())
 
+test_vfold <- rsample::vfold_cv(df, v = v_good, strata = response_var)
 
 # expected function outputs
 
 expected_mode <- "classification"
+empty_weight_func <- ""
 expected_engine <- "kknn"
-expected_spec_class <-"model_spec"
+expected_spec_class <- "model_spec"
 expected_recipe_class <- "recipe"
-expected_num_splits <- v
+expected_num_splits <- v_good
 expected_vfold_class <- "vfold_cv"
 expected_num_rows_grid <- max_neighbors - min_neighbors + 1
-
+expected_tibble <- "tbl_df"

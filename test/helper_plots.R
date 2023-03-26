@@ -1,4 +1,5 @@
 library(ggplot2)
+library(dplyr)
 
 # Defining input data for horizontal-hist function
 test_data_1 <- data.frame(x = c(1, 2, 3, 4), y = c(10, 20, 30, 40), color = c("red", "blue", "green", "red"))

@@ -1,6 +1,11 @@
 library(tidyverse)
+library(ggplot2)
 
-#' Build a horizontal histogram that will help understand the pattern between two variable
+#' Build a horizontal histogram that will help understand the pattern between two variables
+#' 
+#' Creates a horizontal histogram depicts relationship between 2 variables,
+#' naming the axes and the plot with the given labels,
+#' in a given size
 #' 
 #' @param data A data frame containing 
 #' @param x_var The column that consists of the x values for the graph
@@ -30,6 +35,11 @@ horizontal_hist <- function(data, x_var, y_var, x_label, y_label, plot_title, pl
 
 #' Build a scatter plot to help understand the relationship between two variables.
 #' 
+#' Creates a scatterplot depicting relationship between 2 variables,
+#' color-coding the different points into different groups,
+#' naming the axes and the plot with the given labels,
+#' in a given size
+#' 
 #' @param data A data frame containing 
 #' @param x_var The column that consists of the x values for the graph
 #' @param y_var The column that consists of the y values for the graph 
@@ -57,7 +67,10 @@ scatterplot <- function(data, x_var, y_var, color_var, x_label, y_label, color_l
 }
 
 
-#' Build a plot to help understand the accuraces
+#' Build a plot to help understand the accuracies
+#' 
+#' Creates a line plot depicting the relationship between two variables, one of them being the accuracy
+#' naming the axes and the plot with the given labels,
 #' 
 #' @param workflow_data A data frame containing the workflow
 #' @param x_label Name given to the x axis 
