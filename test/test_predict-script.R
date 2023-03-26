@@ -1,32 +1,31 @@
 library(testthat)
-source("./../R/predict-script.R")
+library(tidymodels)
 
-data(mtcars)
+source("./R/predict-script.R")
+source("./test/helper_predict-script.R")
 
-# Dummy test data
-test_data <- mtcars %>%
-  select(mpg, cyl, disp)
+# Test cases for predict_drugs_workflow
+test_that("predict_drugs_workflow returns the expected output", {
+  # Test case 1
+  expect_identical(colnames(result), expected_columns)
+  # Test case 2
+  expect_true(all(result$.pred_class %in% expected_results))
+  # Test case 3
+  expect_equal(result$.pred_class, expected_predictions)
+})
 
-# Dummy knn workflow object
-knn_wf <- knn(train = test_data, test = test_data$mpg, k = 3)
+# Test case 4
+test_that("predict_drugs_workflow() returns a dataframe", {
+  expect_is(mock_pred_data, mock_pred_class)
+})
 
-# Test cases
-test_that("predict_drugs_workflow returns expected output", {
-  # Call the function
-  predict_drugs_workflow(knn_wf, test_data)
-  
-  # Check if the output file was created
-  expect_true(file.exists("data/prediction_data.csv"))
-  
-  # Check if the output file is not empty
-  expect_true(file.size("data/prediction_data.csv") > 0)
-  
-  # Check if the number of rows in the output matches the number of rows in the test data
-  expect_equal(nrow(read.csv("data/prediction_data.csv")), nrow(test_data))
-  
-  # Check if the output file has the expected column names
-  expect_equal(colnames(read.csv("data/prediction_data.csv")), c("pred", "mpg", "cyl", "disp"))
-  
-  # Check if the predicted values are within the range of actual values
-  expect_true(all(read.csv("data/prediction_data.csv")$pred >= min(test_data$mpg) & read.csv("data/prediction_data.csv")$pred <= max(test_data$mpg)))
+# Test case 5
+test_that("predict_drugs_workflow() handles non-data frame test_data
+          input correctly", {
+  expect_error(predict_drugs_workflow(drugs_workflow, not_dataframe))
+})
+
+# Test case 5
+test_that("predict_drugs_workflow() handles null knn_wf input correctly", {
+  expect_error(predict_drugs_workflow(NULL, drugs_test))
 })

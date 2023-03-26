@@ -1,35 +1,44 @@
 library(testthat)
-source("../../R/clean-wrangle-data.R")
+library(dplyr)
+source("./R/clean-wrangle-data.R")
+source("./test/helper_clean-wrangle.R")
+library(testthat)
 
-# Create sample data for testing
-data <- data.frame(group = c("A", "A", "B", "B", "C"),
-                   value = c(1, 2, 3, 4, 5))
 
-# Define the function to test
-my_grouped_function <- function(data) {
-  group_summary <- data %>%
-    group_by(group) %>%
-    summarize(avg_value = mean(value))
-  return(group_summary)
-}
-
-# Test if function returns a data frame with expected columns
-test_that("my_grouped_function() returns a data frame with expected columns", {
-  result <- my_grouped_function(data)
-  expect_is(result, "data.frame")
-  expect_identical(colnames(result), c("group", "avg_value"))
+test_that("wrangle_training_data should return a data frame", {
+  expect_is(wrangle_training_data(training_data, predictor, strata_variable, group_labels), "data.frame")
 })
 
-# Test if function groups data correctly
-test_that("my_grouped_function() groups data correctly", {
-  result <- my_grouped_function(data)
-  expected_result <- data.frame(group = c("A", "B", "C"),
-                                avg_value = c(1.5, 3.5, 5))
-  expect_identical(result, expected_result)
+
+test_that("wrangle_training_data should return correct output for accurate input", {
+  expect_identical(
+    wrangle_training_data(training_data, predictor, strata_variable, group_labels),
+    output
+  )
 })
 
-# Test if function calculates average correctly
-test_that("my_grouped_function() calculates average correctly", {
-  result <- my_grouped_function(data)
-  expect_equal(result$avg_value[1], 1.5)
+
+test_that("wrangle_training_data throws an error if predictor or strata_variable are not in training_data", {
+  expect_error(
+    wrangle_training_data(training_data, "error", strata_variable, group_labels),
+    "Unexpected input: predictor or strata_variable not found in the training_data"
+  )
+
+  expect_error(
+    wrangle_training_data(training_data, predictor, "error", group_labels),
+    "Unexpected input: predictor or strata_variable not found in the training_data"
+  )
 })
+
+test_that("wrangle_training_data throws an error if group_labels is an empty vector", {
+  expect_error(
+    wrangle_training_data(training_data, predictor, strata_variable, NULL),
+    "Unexpected input: group_labels must be a vector that is not-empty"
+  )
+
+  expect_error(
+    wrangle_training_data(training_data, predictor, strata_variable, character()),
+    "Unexpected input: group_labels must be a vector that is not-empty"
+  )
+})
+

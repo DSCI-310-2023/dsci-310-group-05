@@ -20,23 +20,43 @@ The analysis report can be found [here](/analysis/Cannabis-Use-Prediction_Analys
 We use a Docker container image to make the computational environment for this project reproducible. Follow the steps below to interactively run JupterLab and explore the project:
 
 - Clone this repository and in the terminal, navigate to the root of this project. 
-- Run the following command in the terminal: 
+- First, run the following command in the terminal:
 
-   ```docker run --rm --user root -v $(pwd):/opt/notebooks -p 8888:8888 daahmad/dsci-310-group-05```
+   ```
+   docker pull daahmad/dsci-310-group-05
+   ```
+  
+- Next, run the following command in the terminal: 
 
-- Once the container is launched, copy the URL from the terminal that looks like: ``` http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3``` into the web browser to access JupyterLab.
-- In JupyterLab, navigate to and upload ```Cannabis-Use-Prediction_Analysis.ipynb``` from the ```analysis``` folder.
+   ```
+   docker run --rm --user root -v $(pwd):/home/jovyan -p 8888:8888 daahmad/dsci-310-group-05
+   ```
+
+- Once the container is launched, copy the URL from the terminal that looks like: 
+``` 
+http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3
+``` 
+into the web browser to access JupyterLab.
+- You can now access the entire project
+
+#### *To run the analysis within JupyterLab*
+- In JupyterLab, navigate to ```Cannabis-Use-Prediction_Analysis.ipynb``` under the ```analysis``` folder.
 - Click __Kernel > Restart and run all__ to run the entire analysis.
 
 
 ## __Dependencies:__
 
 These are the dependencies needed to run the analysis:
-- tidyverse
-- tidymodels
-- repr
-- dplyr
-- tidyr
+- tidyverse=1.3.2
+- tidymodels=1.0.0 
+- repr=1.1.5
+- dplyr=1.0.10
+- tidyr=1.2.1
+- testthat=3.1.6
+- kknn=1.3.1
+- ggplot2=3.4.0
+- purrr=1.0.1
+- rsample=1.1.1
 
 
 ## **Licences:** ##

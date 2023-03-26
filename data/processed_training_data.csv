@@ -1,0 +1,12 @@
+"Nicotine","Cannabis","n","label"
+<<<<<<< HEAD
+"no","yes",146,"Neither"
+"no","no",471,"Cannabis only"
+"yes","yes",603,"Nicotine only"
+"yes","no",192,"Both"
+=======
+"no","yes",147,"Neither"
+"no","no",467,"Cannabis only"
+"yes","yes",602,"Nicotine only"
+"yes","no",196,"Both"
+>>>>>>> 101871afb9bc489fa92b7d73944af1118656df20
