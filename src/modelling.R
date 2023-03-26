@@ -14,6 +14,7 @@ Options:
     --dest_results_data=<dest_path>         Path to where the results data with predictions should be saved
     "
 
+# calling the necessary libraries 
 library(tidyverse)
 library(tidymodels)
 library(ggplot2)
@@ -24,24 +25,21 @@ source("R/predict-script.R")
 
 opt <- docopt(doc)
 
+# saving the training and testing data as local variables for easy usage
 training_data <- read.csv(opt$training_data_path)
 testing_data <- read.csv(opt$testing_data_path)
 
+# because Nicotine is stored with string values, we must turn them into integers to be used in the script
 drug_data <- mutate(training_data, Nicotine = str_replace_all(Nicotine, c("yes" = "1","no" = "0"))) %>% 
   mutate(Nicotine = as.numeric(Nicotine))
 
+# running the training data through the KNN functions to produce the workflow 
 set.seed(2)
-drugs_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = tune()) %>% 
-  set_engine("kknn") %>% 
-  set_mode("classification")
 
-drugs_recipe <- recipe(Cannabis ~ ., data = drug_data) %>% 
-  step_scale(all_predictors()) %>% 
-  step_center(all_predictors())
-
-drugs_vfold <- vfold_cv(drug_data, v = 5, strata = Cannabis)
-
-gridvals <- tibble(neighbors = seq(1, 30))
+drugs_spec <- create_knn_spec("rectangular")
+drugs_recipe <- create_recipe(drug_data, "Cannabis")
+drugs_vfold <- create_vfold(drug_data, 5, "Cannabis")
+gridvals <- create_grid(1, 30)
 
 drugs_workflow <- workflow() %>% 
   add_recipe(drugs_recipe) %>% 
@@ -50,6 +48,7 @@ drugs_workflow <- workflow() %>%
   collect_metrics()
 
 
+# plotting the accuracy graph based on the workflow
 acc_plot <- accuracy_plot(drugs_workflow,
                           x_label = "Number of Neighbors",
                           y_label = "Accuracy Estimate",
@@ -57,6 +56,7 @@ acc_plot <- accuracy_plot(drugs_workflow,
 
 ggplot2::ggsave("neighbors_and_accuracy_graph.png", device = "png", path = opt$fig_out_dir, width = 12, height = 12)
 
+# finalizing the KNN classification algorithm functions with the best fitting neighbor value obtained from the plot above
 drugs_real_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = 23) %>% 
   set_engine("kknn") %>%
   set_mode("classification")
@@ -66,10 +66,10 @@ drugs_real_workflow <- workflow() %>%
   add_model(drugs_real_spec) %>% 
   fit(data = drug_data)
 
-drugs_pred <- predict(drugs_real_workflow, testing_data) %>% 
-  bind_cols(testing_data)
+# calculating how well the training data predicts the testing data 
+predict_drugs_workflow(drugs_real_workflow, testing_data)
 
-
+# saving the modified training data, workflow and prediction results as data frames
 write.csv(drug_data, opt$dest_std_training_data, row.names = FALSE)
 write.csv(drugs_workflow, opt$dest_workflow_data, row.names = FALSE)
 write.csv(drugs_pred, opt$dest_results_data, row.names = FALSE)

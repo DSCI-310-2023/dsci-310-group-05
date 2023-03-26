@@ -10,6 +10,7 @@ Options:
     --dest_accuracy_data=<dest_path>    Path to where the results data with predictions should be saved
     "
 
+# calling the necessary libraries 
 library(tidyverse)
 library(tidymodels)
 library(repr)
@@ -19,10 +20,13 @@ library(docopt)
 
 opt <- docopt(doc)
 
+# saving the results data from the modeling script as a local variable for easy usage
 drugs_pred <- read.csv(opt$pred_data_path)
 
+# calculating the accuracy of the classification model
 drug_acc <- accuracy(drugs_pred, as.factor(Cannabis), as.factor(.pred_class)) %>%
    filter(.metric == "accuracy") %>%
    select(.estimate) 
 
+# saving the accuracy as a data frame
 write.csv(drug_acc, opt$dest_accuracy_data, row.names = FALSE)
