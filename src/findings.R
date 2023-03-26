@@ -19,15 +19,10 @@ library(docopt)
 
 opt <- docopt(doc)
 
-pred_data <- read.csv(opt$pred_data_path)
+drugs_pred <- read.csv(opt$pred_data_path)
 
-pred_drug_data <- mutate(pred_data, Cannabis = str_replace_all(Cannabis, c("yes" = "1","no" = "0"))) %>%
-  mutate(Cannabis = as.numeric(Cannabis))
-pred_drug_data <- mutate(pred_drug_data, .pred_class = str_replace_all(.pred_class, c("yes" = "1","no" = "0"))) %>%
-  mutate(.pred_class = as.numeric(.pred_class))
+drug_acc <- accuracy(drugs_pred, as.factor(Cannabis), as.factor(.pred_class)) %>%
+   filter(.metric == "accuracy") %>%
+   select(.estimate) 
 
-drug_acc <- pred_drug_data %>%
-  metrics(truth = Cannabis, estimate = .pred_class) %>%
-  filter(.metric == "accuracy")
-
-write.csv(drug_acc, opt$dest_accuracy_data)
+write.csv(drug_acc, opt$dest_accuracy_data, row.names = FALSE)

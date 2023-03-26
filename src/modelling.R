@@ -34,11 +34,15 @@ set.seed(2)
 drugs_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = tune()) %>% 
   set_engine("kknn") %>% 
   set_mode("classification")
+
 drugs_recipe <- recipe(Cannabis ~ ., data = drug_data) %>% 
   step_scale(all_predictors()) %>% 
   step_center(all_predictors())
+
 drugs_vfold <- vfold_cv(drug_data, v = 5, strata = Cannabis)
+
 gridvals <- tibble(neighbors = seq(1, 30))
+
 drugs_workflow <- workflow() %>% 
   add_recipe(drugs_recipe) %>% 
   add_model(drugs_spec) %>% 

@@ -34,6 +34,14 @@ drugs <- select(raw_data, Age, Gender, Nscore, Escore, Oscore, Ascore, Nicotine,
   mutate(Cannabis = as_factor(Cannabis)) %>% 
   mutate(Nicotine = str_replace_all(Nicotine, c("CL0" = "no", "CL1" = "no", "CL2" = "no", "CL3" = "yes", "CL4" = "yes", "CL5" = "yes", "CL6" = "yes")))
 
+<<<<<<< HEAD
+=======
+drugs <- select(raw_data, Age, Gender, Nscore, Escore, Oscore, Ascore, Nicotine, Cannabis) %>% 
+  mutate(Cannabis = str_replace_all(Cannabis, c("CL0" = "no", "CL1" = "no", "CL2" = "no", "CL3" = "yes", "CL4" = "yes", "CL5" = "yes", "CL6" = "yes"))) %>%          
+  mutate(Cannabis = as_factor(Cannabis)) %>% 
+  mutate(Nicotine = str_replace_all(Nicotine, c("CL0" = "no", "CL1" = "no", "CL2" = "no", "CL3" = "yes", "CL4" = "yes", "CL5" = "yes", "CL6" = "yes")))
+
+>>>>>>> 101871afb9bc489fa92b7d73944af1118656df20
 set.seed(1) 
 train_test_data <- split_dataset(drugs, strata, predictor)
 training_data <- data.frame(train_test_data[1])
@@ -41,6 +49,11 @@ testing_data <- data.frame(train_test_data[2])
 
 testing_data <- mutate(testing_data, Nicotine = str_replace_all(Nicotine, c("no" = "0", "yes" = "1"))) %>% 
   mutate(Nicotine = as.numeric(Nicotine))
+<<<<<<< HEAD
+=======
+
+group_labels <- c("Neither", "Cannabis only", "Nicotine only", "Both")
+>>>>>>> 101871afb9bc489fa92b7d73944af1118656df20
 
 group_labels <- c("Neither", "Cannabis only", "Nicotine only", "Both")
 cannabis_and_nicotine <- wrangle_training_data(training_data, Nicotine, Cannabis, group_labels)
