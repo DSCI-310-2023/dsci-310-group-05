@@ -14,7 +14,7 @@ Options:
     --dest_results_data=<dest_path>         Path to where the results data with predictions should be saved
     "
 
-# calling the necessary libraries 
+# calling the necessary libraries for running this script
 library(tidyverse)
 library(tidymodels)
 library(ggplot2)
