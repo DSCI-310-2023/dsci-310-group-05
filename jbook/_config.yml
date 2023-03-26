@@ -1,9 +1,0 @@
-title: "Cannabis Use Prediction"
-author: "Angela Machado, Chris Lee, Daniel Davydova, & Jerome Ting"
-sphinx:
-  config:
-    bibtex_reference_style: author_year
-execute:
-  execute_notebooks: force
-bibtex_bibfiles: 
-  - references.bib
