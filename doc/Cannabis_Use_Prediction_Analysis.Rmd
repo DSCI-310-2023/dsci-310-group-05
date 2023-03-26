@@ -11,7 +11,6 @@ output:
   bookdown::pdf_document2: 
       toc: true
       toc_depth: 2
-      
 bibliography: references.bib  
 ---
 # **Cannabis Use Prediction**
@@ -105,7 +104,7 @@ these two drugs are similar in terms of context and method of use.
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, echo = FALSE ,warning=FALSE}
 library(tidyverse)
 library(tidymodels)
 library(repr)
@@ -113,21 +112,17 @@ library(dplyr)
 library(tidyr)
 ```
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, echo =FALSE, warning=FALSE}
 set.seed(1) 
 
 ```
 
 
-``` {r message=FALSE, warning=FALSE}
-colnames <- c("ID", "Age", "Gender", "Education", "Country", "Ethnicity", "Nscore", "Escore", "Oscore", 
-                                       "Ascore", "Cscore", "Impulsive", "SS", "Alcohol", "Amphet", "Amyl", "Benzos", "Caff", 
-                                       "Cannabis", "Choc", "Coke", "Crack", "Ecstasy", "Heroin", "Ketamine", "Legalh", "LSD", 
-                                       "Meth", "Mushrooms", "Nicotine", "Semer", "VSA")
-
-raw_data <- initial_data("./../data/drug_consumption.csv", colnames)
-head(raw_data)
+``` {r raw-data-table, echo = FALSE,  message=FALSE, warning=FALSE}
+raw_data <- read_csv("../data/drug_consumption.csv")
+knitr::kable(head(raw_data), caption = "Summary table of the entire dataset")
 ```
+
 
 Table 1. Summary table of the entire dataset
 
@@ -144,13 +139,10 @@ We assume that someone who used the drug more than a year ago is not to
 be considered a user, so we will mutate the values CL0, CL1, and CL2 to
 no (does not use) and the rest to yes (used recently/still using).
 
-``` {r message=FALSE, warning=FALSE}
-drugs <- select(raw_data, Age, Gender, Nscore, Escore, Oscore, Ascore, Nicotine, Cannabis) %>% 
-         mutate(Cannabis = str_replace_all(Cannabis, c("CL0" = "no", "CL1" = "no", "CL2" = "no", "CL3" = "yes", "CL4" = "yes", "CL5" = "yes", "CL6" = "yes"))) %>%          
-         mutate(Cannabis = as_factor(Cannabis)) %>% 
-         mutate(Nicotine = str_replace_all(Nicotine, c("CL0" = "no", "CL1" = "no", "CL2" = "no", "CL3" = "yes", "CL4" = "yes", "CL5" = "yes", "CL6" = "yes")))
 
-head(drugs)
+``` {r drugs-table, echo = FALSE,  message=FALSE, warning=FALSE}
+drugs <- read_csv("../data/drug_user_consumption.csv")
+knitr::kable(head(drugs), caption = "Summary table of the dataset used in the analysis")
 ```
 
 Table 2. Summary table of the dataset used in the analysis
@@ -162,26 +154,16 @@ giving us 470 testing variables. Furthermore, since nicotine will be
 used as a predictor, we want the testing set to have nicotine as a
 numeric variable.
 
-``` {r message=FALSE, warning=FALSE}
-train_test_data <- split_dataset(drugs, 'Cannabis', 'Nicotine')
-
-#Train and test data
-training_data <- data.frame(train_test_data[1])
-testing_data <- data.frame(train_test_data[2])
-
-#setting predictor as numeric value
-testing_data <- mutate(testing_data, Nicotine = str_replace_all(Nicotine, c
-```
 
 **Data cleaning and wrangling**
 
 
-``` {r message=FALSE, warning=FALSE}
-group_labels <- c("Neither", "Cannabis only", "Nicotine only", "Both") 
-
-cannabis_and_nicotine <- wrangle_training_data(training_data, Nicotine, Cannabis, group_labels)
-head(cannabis_and_nicotine)
+``` {r cannabis_and_nicotine-table, echo = FALSE,  message=FALSE, warning=FALSE}
+cannabis_and_nicotine <- read_csv("../data/processed_training_data.csv")
+knitr::kable(head(cannabis_and_nicotine), caption = "Table of the number of individuals (n) that fall into each label")
 ```
+
+
 Table 3. Table of the number of individuals (n) that fall into each
 label
 
@@ -190,14 +172,11 @@ label
 First, we are interested in understanding the pattern of cannabis and
 nicotine consumption in our sample.
 
-``` {r message=FALSE, warning=FALSE}
-cannabis_and_nicotine_graph <- horizontal_hist(cannabis_and_nicotine, label, n, "", "Amount of participants", 
-                                               "Nicotine usage vs. Cannabis usage", plot_width = 8, plot_height = 6)
 
-cannabis_and_nicotine_graph
+```{r cannabis-nicotine, echo = FALSE,out.width="50%", fig.cap = "Horizontal histogram of Nicotine usage vs Cannabis usage"}
+
+knitr::include_graphics("../results/cannabis_and_nicotine_graph.png")
 ```
-
-Figure 1. Horizontal histogram of Nicotine usage vs Cannabis usage.
 
 Another relationship that we are interested in exploring is how the
 personality trait \"Openness\", which measures how willing people are to
@@ -206,38 +185,25 @@ will make a new column called rate to express the percentage of each
 group that uses cannabis, as the data has been standardized and looking
 at raw marijuana user data will simply give us a normal distribution.
 
-``` {r message=FALSE, warning=FALSE}
-## Here, we will make a new column called rate to express the percentage of each group that uses cannabis, as the data 
-## has been standardized and looking at raw marijuana user data will simply give us a normal distribution.
 
-OpenNicWeed <- group_by(training_data, Oscore, Nicotine, Cannabis) %>%
-               summarize(n = n()) %>%
-               pivot_wider(names_from = Cannabis, values_from = n) %>%
-               replace(is.na(.), 0) %>%  # To make sure 0s don't get read as NAs
-               mutate(total = yes + no) %>%  # To find rate
-               mutate(rate = yes / total * 100)
-```
-     
-``` {r message=FALSE, warning=FALSE}
-scatterplot(OpenNicWeed, Oscore, rate, Nicotine, "Openness", "Percentage of People Who Use Cannabis", "Use Nicotine", "Openness vs. Cannabis use", plot_width = 9, plot_height = 7)
-```
 
-Figure 2. Scatter plot of cannabis use % vs openness. Openness is the
-standardized personality Oscore.
+
+```{r cannabis-graph, echo = FALSE, out.width="50%", out.height="50%", fig.cap = "Scatter plot of cannabis use % vs openness. Openness is the standardized personality Oscore."}
+
+knitr::include_graphics("../results/openness_and_cannabis_graph.png")
+```
 
 We see that the rate of cannabis and nicotine users increases with
 larger openness scores, and we can also see that there are more people
 that use both nicotine and cannabis than people who use strictly only
 cannabis (more blue than red data points).
 
-``` {r message=FALSE, warning=FALSE}
-# Need Nicotine to be numeric and standardized in order to use it
 
-drug_data <- mutate(training_data, Nicotine = str_replace_all(Nicotine, c("yes" = "1","no" = "0"))) %>% 
-             mutate(Nicotine = as.numeric(Nicotine))
-
-head(drug_data)
+``` {r drug_data-table, echo = FALSE,  message=FALSE, warning=FALSE}
+drug_data <- read_csv("../data/standardized_training_data.csv")
+knitr::kable(head(drug_data), caption = "Table of used predictors with Nicotine standardized, where Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.")
 ```
+
 
 Table 4. Table of used predictors with Nicotine standardized, where
 Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no
@@ -247,55 +213,33 @@ nicotine use.
 
 Firstly, we must tune our classifier in order to find the optimal number of neighbours to be used in our model.
 
-``` {r message=FALSE, warning=FALSE}
-drugs_spec <- create_knn_spec("rectangular")
-drugs_recipe <- create_recipe(drug_data, 'Cannabis') 
-drugs_vfold <- create_vfold(drug_data, 5, 'Cannabis')
-gridvals <- create_grid(1, 30)
-drugs_workflow <- workflow() %>% 
-                  add_recipe(drugs_recipe) %>% 
-                  add_model(drugs_spec) %>% 
-                  tune_grid(resamples = drugs_vfold, grid = gridvals) %>% 
-                  collect_metrics()
 
-head(drugs_workflow)
+
+``` {r drugs-workflow-table, echo = FALSE,  message=FALSE, warning=FALSE}
+drugs_workflow <- read_csv("../data/drugs_workflow_data.csv")
+knitr::kable(head(drugs_workflow), caption = "Table of accuracy estimates and standard error outputs corresponding to a few different values of K-neighbours.")
 ```
+
 
 Table 5. Table of accuracy estimates and standard error outputs
 corresponding to a few different values of K-neighbours.
 
 
-``` {r message=FALSE, warning=FALSE}
-acc_plot <- accuracy_plot(drugs_workflow, 
-              x_label = "Number of Neighbors", 
-              y_label = "Accuracy Estimate", 
-              plot_title = "Neighbors vs. Accuracy")
+```{r acc-plot, echo = FALSE, fig.cap = "Plot of accuracy estimate versus number of neighbours. Mean accuracy in % for different values of K-neighbours. K = 23 and K = 24 yield the highest accuracies, and after K exceeds 24, accuracy starts to decline."}
 
-acc_plot
+knitr::include_graphics("../results/neighbors_and_accuracy_graph.png")
 ```
 
 
-Figure 3. Plot of accuracy estimate versus number of neighbours. Mean
-accuracy in % for different values of K-neighbours. K = 23 and K = 24
-yield the highest accuracies, and after K exceeds 24, accuracy starts to decline.
-
-From the graph plotted in Figure 8, we can see that the numbers of neighbours that give us the highest mean accuracy is 23 and 24. Because the drop in accuracy from 24 to 25 is much greater than the drop from 23 to 22, we have decided to use 23 as our K. It should be noted that using some other values for K would be just as reasonable in this case, e.g. 21, since the difference in accuracy is less than 1%.
+From the graph plotted in Figure \@ref(fig:acc-plot), we can see that the numbers of neighbours that give us the highest mean accuracy is 23 and 24. Because the drop in accuracy from 24 to 25 is much greater than the drop from 23 to 22, we have decided to use 23 as our K. It should be noted that using some other values for K would be just as reasonable in this case, e.g. 21, since the difference in accuracy is less than 1%.
 
 
-``` {r message=FALSE, warning=FALSE}
-drugs_real_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = 23) %>% 
-                   set_engine("kknn") %>%
-                   set_mode("classification")
 
-drugs_real_workflow <- workflow() %>% 
-                       add_recipe(drugs_recipe) %>% 
-                       add_model(drugs_real_spec) %>% 
-                       fit(data = drug_data)
-
-drugs_pred <- predict_drugs_workflow(drugs_real_workflow, testing_data)
-
-head(drugs_pred)
+``` {r drugs-pred-table, echo = FALSE,  message=FALSE, warning=FALSE}
+drugs_pred <- read_csv("../data/results_data.csv")
+knitr::kable(head(drugs_pred), caption = "Table of prediction outputs for cannabis use. Predictors except Nicotine are scaled and therefore do not provide a clear indication of what predictor values contribute to suggesting that someone would use/not use cannabis. Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.")
 ```
+
 
 Table 6. Table of prediction outputs for cannabis use. Predictors except Nicotine are scaled and therefore do not provide a clear indication of what predictor values contribute to suggesting that someone would use/not use cannabis. Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.
 
@@ -303,15 +247,7 @@ Now, we pull the final accuracy rate for our classifier.
 
 
 
-``` {r message=FALSE, warning=FALSE}
-# Pulling final accuracy for our classifier
-drug_acc <- drugs_pred %>% 
-            metrics(truth = Cannabis, estimate = .pred_class) %>% 
-            filter(.metric == "accuracy") %>% 
-            select(.estimate) %>% 
-            pull()
-drug_acc
-```
+
 
 0.809322033898305
 

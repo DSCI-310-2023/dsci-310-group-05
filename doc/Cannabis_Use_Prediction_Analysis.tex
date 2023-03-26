@@ -1,0 +1,543 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Cannabis\_Use\_Prediction\_Analysis},
+  pdfauthor={Angela Machado, Chris Lee, Daniel Davydova, \& Jerome Ting},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Cannabis\_Use\_Prediction\_Analysis}
+\author{Angela Machado, Chris Lee, Daniel Davydova, \& Jerome Ting}
+\date{2023-03-26}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{cannabis-use-prediction}{%
+\section{\texorpdfstring{\textbf{Cannabis Use Prediction}}{Cannabis Use Prediction}}\label{cannabis-use-prediction}}
+
+\hypertarget{summary}{%
+\subsection{\texorpdfstring{\textbf{Summary}}{Summary}}\label{summary}}
+
+This project aims to predict cannabis use based on demographic patterns,
+personality traits, and nicotine use. A survey collected between 2011 to
+2012 of 1885 respondents from the UCI Machine Learning repository was
+used as the main sample. By using age, gender, education, Big Five
+personality traits, and nicotine use as predictors, we predicted how
+likely an individual is to use cannabis. Based on the analysis, we were
+able to predict an individual\textquotesingle s probability of using cannabis with a
+81\% accuracy rate, using a 5-fold cross-validation and a K-nearest
+neighbors classification algorithm with 23 neighbors. The findings
+suggest that the algorithm can be used in the future with a
+satisfactorily high degree of certainty in regards to its outputs.
+
+\hypertarget{introduction}{%
+\subsection{\texorpdfstring{\textbf{Introduction}}{Introduction}}\label{introduction}}
+
+Cannabis is a drug derived from the plant Cannabis. Commonly smoked, it
+can alter mental and physical states. With more and more governments
+around the globe legalizing recreational and/or medical cannabis use in
+recent years, its popularity has surged.\\
+Meanwhile, nicotine is commonly consumed by smoking and alters the mood.
+Given that nicotine is consumed in a similar way and also in a similar
+context as cannabis, we wonder if there is a relationship between the
+use of those drugs. This provokes the idea of determining what
+demographic patterns such as age and ethnicity there are among the
+people who have followed this trend. Furthermore, personality traits,
+specifically those in the Five Factor Model of personality (i.e.
+openness, conscientiousness, extraversion, agreeableness, and
+neuroticism) have been shown to contribute to a person's drug usage.
+According to Digman (1990), these traits can be described as follows:
+openness refers to a preference for novelty, conscientiousness explains
+one\textquotesingle s tendency to be organized and careful, extraversion refers to
+one\textquotesingle s preference for being in the company of others, agreeableness is a
+measure of one\textquotesingle s level of agreement with others and neuroticism
+indicates a predisposition to experience stress and negative emotions.
+Marijuana use is commonly seen in people having high openness (Oscore),
+low agreeableness (Ascore), low extraversion (Escore) and average
+neuroticism (Nscore), whereas smokers in general have a higher
+neuroticism (Nscore), lower agreeableness (Ascore), and lower
+conscientiousness (Cscore) (Terracciano et al.~, 2008). Furthermore, it
+has been found that a high level of neuroticism (Nscore) and low scores
+on agreeableness (Ascore) and conscientiousness (Cscore) are associated
+with addictive behaviour -- these individuals have been described as
+more likely to experience negative emotions (high neuroticism), more
+likely to act on impulses, and engage in careless behaviour (low
+conscientiousness), as well as be more likely to stick to their own
+opinions (low agreeableness) (Dash et al., 2019).
+
+Thus, we pose the question, can we predict cannabis use based on
+demographics, the Big Five personality traits, and nicotine use? We
+chose to use the drug consumption dataset from the UCI Machine Learning
+repository. The dataset is a survey collected between 2011 to 2012 of
+1885 respondents questioned about their usage of 18 drugs (Fehrman et
+al.~2017). The survey also collected information about their personality
+(NEO-FFI-R, BIS-11, ImpSS) and demographics (level of education, age,
+country of residence, ethnicity, and gender).
+
+\hypertarget{methods-results}{%
+\subsection{\texorpdfstring{\textbf{Methods \& Results}}{Methods \& Results}}\label{methods-results}}
+
+We conducted our data analysis by using demographics (columns Age,
+Gender, Education), scores of each of the Big Five personality traits
+(columns Oscore, Cscore, Escore, Ascore, Nscore), and nicotine use
+(column Nicotine) as the predictors. Based on these variables, we
+attempted to predict how likely an individual is to use cannabis (column
+Cannabis), our target variable. We chose not to use Ethnicity, Country,
+BIS-11, ImpSS, and the other drugs' consumptions as predictors and only
+focused on nicotine usage. We decided to omit ethnicity and country
+because the data set included a very limited variety of answers in those
+two variables (e.g.~far too often returning White for ethnicity).
+Furthermore, since most of the literature we found about the
+relationship between drug use and personality included only Big Five
+Personality traits, we opted for omitting the other measures of
+personality. In using 8 predictors, we aimed to balance obtaining a
+meaningful insight from our data (by increasing our number of
+predictors) while also limiting the amount of variables to simplify the
+scope of our report (by decreasing our number of predictors). Previous
+research has shown correlations between personality and drug usage and
+thus, we believe that the Big Five Personality Traits, prior nicotine
+use, and demographics like age and gender would certainly play a role in
+cannabis use. Lastly, in order to perform a more focused analysis, we
+decided to choose only two drugs to concentrate on: nicotine and
+cannabis. As mentioned before, this choice was guided by the fact that
+these two drugs are similar in terms of context and method of use.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(tidymodels)}
+\FunctionTok{library}\NormalTok{(repr)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(tidyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:raw-data-table}Summary table of the entire dataset}
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|r|r|r|r|r|r|r|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l}
+\hline
+ID & Age & Gender & Education & Country & Ethnicity & Nscore & Escore & Oscore & Ascore & Cscore & Impulsive & SS & Alcohol & Amphet & Amyl & Benzos & Caff & Cannabis & Choc & Coke & Crack & Ecstasy & Heroin & Ketamine & Legalh & LSD & Meth & Mushrooms & Nicotine & Semer & VSA\\
+\hline
+2 & -0.07854 & -0.48246 & 1.98437 & 0.96082 & -0.31685 & -0.67825 & 1.93886 & 1.43533 & 0.76096 & -0.14277 & -0.71126 & -0.21575 & CL5 & CL2 & CL2 & CL0 & CL6 & CL4 & CL6 & CL3 & CL0 & CL4 & CL0 & CL2 & CL0 & CL2 & CL3 & CL0 & CL4 & CL0 & CL0\\
+\hline
+3 & 0.49788 & -0.48246 & -0.05921 & 0.96082 & -0.31685 & -0.46725 & 0.80523 & -0.84732 & -1.62090 & -1.01450 & -1.37983 & 0.40148 & CL6 & CL0 & CL0 & CL0 & CL6 & CL3 & CL4 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL1 & CL0 & CL0 & CL0\\
+\hline
+4 & -0.95197 & 0.48246 & 1.16365 & 0.96082 & -0.31685 & -0.14882 & -0.80615 & -0.01928 & 0.59042 & 0.58489 & -1.37983 & -1.18084 & CL4 & CL0 & CL0 & CL3 & CL5 & CL2 & CL4 & CL2 & CL0 & CL0 & CL0 & CL2 & CL0 & CL0 & CL0 & CL0 & CL2 & CL0 & CL0\\
+\hline
+5 & 0.49788 & 0.48246 & 1.98437 & 0.96082 & -0.31685 & 0.73545 & -1.63340 & -0.45174 & -0.30172 & 1.30612 & -0.21712 & -0.21575 & CL4 & CL1 & CL1 & CL0 & CL6 & CL3 & CL6 & CL0 & CL0 & CL1 & CL0 & CL0 & CL1 & CL0 & CL0 & CL2 & CL2 & CL0 & CL0\\
+\hline
+6 & 2.59171 & 0.48246 & -1.22751 & 0.24923 & -0.31685 & -0.67825 & -0.30033 & -1.55521 & 2.03972 & 1.63088 & -1.37983 & -1.54858 & CL2 & CL0 & CL0 & CL0 & CL6 & CL0 & CL4 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL6 & CL0 & CL0\\
+\hline
+7 & 1.09449 & -0.48246 & 1.16365 & -0.57009 & -0.31685 & -0.46725 & -1.09207 & -0.45174 & -0.30172 & 0.93949 & -0.21712 & 0.07987 & CL6 & CL0 & CL0 & CL0 & CL6 & CL1 & CL5 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL0 & CL6 & CL0 & CL0\\
+\hline
+\end{tabular}
+\end{table}
+
+Table 1. Summary table of the entire dataset
+
+Now, we see that the drug usage is denoted as follows:\\
+CL0: never used the drug\\
+CL1: used the drug over a decade ago;\\
+CL2: used the drug in the last decade;\\
+CL3: used the drug in the last year;\\
+CL4: used the drug in the last month;\\
+CL5: used the drug in the last week;\\
+CL6: used the drug in the last day.
+
+We assume that someone who used the drug more than a year ago is not to
+be considered a user, so we will mutate the values CL0, CL1, and CL2 to
+no (does not use) and the rest to yes (used recently/still using).
+
+\begin{table}
+
+\caption{\label{tab:drugs-table}Summary table of the dataset used in the analysis}
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|l|l}
+\hline
+Age & Gender & Nscore & Escore & Oscore & Ascore & Nicotine & Cannabis\\
+\hline
+-0.07854 & -0.48246 & -0.67825 & 1.93886 & 1.43533 & 0.76096 & yes & yes\\
+\hline
+0.49788 & -0.48246 & -0.46725 & 0.80523 & -0.84732 & -1.62090 & no & yes\\
+\hline
+-0.95197 & 0.48246 & -0.14882 & -0.80615 & -0.01928 & 0.59042 & no & no\\
+\hline
+0.49788 & 0.48246 & 0.73545 & -1.63340 & -0.45174 & -0.30172 & no & yes\\
+\hline
+2.59171 & 0.48246 & -0.67825 & -0.30033 & -1.55521 & 2.03972 & yes & no\\
+\hline
+1.09449 & -0.48246 & -0.46725 & -1.09207 & -0.45174 & -0.30172 & yes & no\\
+\hline
+\end{tabular}
+\end{table}
+
+Table 2. Summary table of the dataset used in the analysis
+
+We used set.seed(1) to make sure results are reproducible. We then split
+the data into a training and a testing set (75\% training, 25\% testing),
+this gives us enough data to train our classifier with, while still
+giving us 470 testing variables. Furthermore, since nicotine will be
+used as a predictor, we want the testing set to have nicotine as a
+numeric variable.
+
+\textbf{Data cleaning and wrangling}
+
+\begin{table}
+
+\caption{(\#tab:cannabis_and_nicotine-table)Table of the number of individuals (n) that fall into each label}
+\centering
+\begin{tabular}[t]{l|l|r|l}
+\hline
+Nicotine & Cannabis & n & label\\
+\hline
+no & yes & 147 & Neither\\
+\hline
+no & no & 467 & Cannabis only\\
+\hline
+yes & yes & 602 & Nicotine only\\
+\hline
+yes & no & 196 & Both\\
+\hline
+\end{tabular}
+\end{table}
+
+Table 3. Table of the number of individuals (n) that fall into each
+label
+
+\hypertarget{visualizations}{%
+\subsubsection{Visualizations}\label{visualizations}}
+
+First, we are interested in understanding the pattern of cannabis and
+nicotine consumption in our sample.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"../results/cannabis\_and\_nicotine\_graph.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{../results/cannabis_and_nicotine_graph} \caption{Horizontal histogram of Nicotine usage vs Cannabis usage}\label{fig:cannabis-nicotine}
+\end{figure}
+
+Another relationship that we are interested in exploring is how the
+personality trait "Openness", which measures how willing people are to
+try new things, plays into marijuana and nicotine consumption. Here, we
+will make a new column called rate to express the percentage of each
+group that uses cannabis, as the data has been standardized and looking
+at raw marijuana user data will simply give us a normal distribution.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"../results/openness\_and\_cannabis\_graph.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbackslash begin\{figure\}
+\includegraphics[width=0.5\linewidth,height=0.5\textheight]{../results/openness_and_cannabis_graph} \textbackslash caption\{Scatter plot of cannabis use \% vs openness. Openness is the standardized personality Oscore.\}\label{fig:cannabis-graph}
+\textbackslash end\{figure\}
+
+We see that the rate of cannabis and nicotine users increases with
+larger openness scores, and we can also see that there are more people
+that use both nicotine and cannabis than people who use strictly only
+cannabis (more blue than red data points).
+
+\begin{table}
+
+\caption{(\#tab:drug_data-table)Table of used predictors with Nicotine standardized, where Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.}
+\centering
+\begin{tabular}[t]{r|r|r|r|r|r|r|l}
+\hline
+Age & Gender & Nscore & Escore & Oscore & Ascore & Nicotine & Cannabis\\
+\hline
+-0.95197 & 0.48246 & -0.14882 & -0.80615 & -0.01928 & 0.59042 & 0 & no\\
+\hline
+2.59171 & 0.48246 & -0.67825 & -0.30033 & -1.55521 & 2.03972 & 1 & no\\
+\hline
+1.09449 & -0.48246 & -0.46725 & -1.09207 & -0.45174 & -0.30172 & 1 & no\\
+\hline
+0.49788 & -0.48246 & -1.32828 & 1.93886 & -0.84732 & -0.30172 & 0 & no\\
+\hline
+0.49788 & 0.48246 & 0.62967 & 2.57309 & -0.97631 & 0.76096 & 1 & no\\
+\hline
+1.82213 & -0.48246 & -0.24649 & 0.00332 & -1.42424 & 0.59042 & 1 & no\\
+\hline
+\end{tabular}
+\end{table}
+
+Table 4. Table of used predictors with Nicotine standardized, where
+Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no
+nicotine use.
+
+\hypertarget{classification}{%
+\subsubsection{Classification}\label{classification}}
+
+Firstly, we must tune our classifier in order to find the optimal number of neighbours to be used in our model.
+
+\begin{table}
+
+\caption{\label{tab:drugs-workflow-table}Table of accuracy estimates and standard error outputs corresponding to a few different values of K-neighbours.}
+\centering
+\begin{tabular}[t]{r|l|l|r|r|r|l}
+\hline
+neighbors & .metric & .estimator & mean & n & std\_err & .config\\
+\hline
+1 & accuracy & binary & 0.7301843 & 5 & 0.0130301 & Preprocessor1\_Model01\\
+\hline
+1 & roc\_auc & binary & 0.7285428 & 5 & 0.0134191 & Preprocessor1\_Model01\\
+\hline
+2 & accuracy & binary & 0.7301843 & 5 & 0.0130301 & Preprocessor1\_Model02\\
+\hline
+2 & roc\_auc & binary & 0.7781643 & 5 & 0.0071449 & Preprocessor1\_Model02\\
+\hline
+3 & accuracy & binary & 0.7606183 & 5 & 0.0041923 & Preprocessor1\_Model03\\
+\hline
+3 & roc\_auc & binary & 0.8052826 & 5 & 0.0057203 & Preprocessor1\_Model03\\
+\hline
+\end{tabular}
+\end{table}
+
+Table 5. Table of accuracy estimates and standard error outputs
+corresponding to a few different values of K-neighbours.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"../results/neighbors\_and\_accuracy\_graph.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{../results/neighbors_and_accuracy_graph.png}
+\caption{\label{fig:acc-plot}Plot of accuracy estimate versus number of neighbours. Mean accuracy in \% for different values of K-neighbours. K = 23 and K = 24 yield the highest accuracies, and after K exceeds 24, accuracy starts to decline.}
+\end{figure}
+
+From the graph plotted in Figure \ref{fig:acc-plot}, we can see that the numbers of neighbours that give us the highest mean accuracy is 23 and 24. Because the drop in accuracy from 24 to 25 is much greater than the drop from 23 to 22, we have decided to use 23 as our K. It should be noted that using some other values for K would be just as reasonable in this case, e.g.~21, since the difference in accuracy is less than 1\%.
+
+\begin{table}
+
+\caption{\label{tab:drugs-pred-table}Table of prediction outputs for cannabis use. Predictors except Nicotine are scaled and therefore do not provide a clear indication of what predictor values contribute to suggesting that someone would use/not use cannabis. Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|l}
+\hline
+.pred\_class & Age & Gender & Nscore & Escore & Oscore & Ascore & Nicotine & Cannabis\\
+\hline
+no & 0.49788 & -0.48246 & -0.46725 & 0.80523 & -0.84732 & -1.62090 & 0 & yes\\
+\hline
+no & 1.82213 & -0.48246 & -2.05048 & -1.50796 & -1.55521 & -1.07533 & 0 & no\\
+\hline
+no & 0.49788 & 0.48246 & -1.55078 & -0.80615 & -1.68062 & 0.28783 & 1 & yes\\
+\hline
+no & 1.09449 & -0.48246 & 0.41667 & -0.94779 & -0.84732 & 1.11406 & 0 & no\\
+\hline
+no & 1.82213 & 0.48246 & -0.05188 & -1.63340 & -3.27393 & -0.76096 & 1 & no\\
+\hline
+no & 1.09449 & -0.48246 & 0.31287 & -0.80615 & -1.27553 & -1.47955 & 0 & no\\
+\hline
+\end{tabular}
+\end{table}
+
+Table 6. Table of prediction outputs for cannabis use. Predictors except Nicotine are scaled and therefore do not provide a clear indication of what predictor values contribute to suggesting that someone would use/not use cannabis. Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.
+
+Now, we pull the final accuracy rate for our classifier.
+
+0.809322033898305
+
+The result is an accuracy of approximately 0.809 or 80.9\%.
+
+\hypertarget{discussion}{%
+\subsection{\texorpdfstring{\textbf{Discussion}}{Discussion}}\label{discussion}}
+
+\hypertarget{summary-of-findings}{%
+\subsubsection{Summary of findings}\label{summary-of-findings}}
+
+By training our model by performing a 5-fold cross-validation and using
+23 as the number of neighbours in our K-nearest neighbours
+classification algorithm, we were able to predict one\textquotesingle s probability of
+using Cannabis based on age, gender, education and personality scores
+with a 80.9\% accuracy.
+
+\hypertarget{evaluation-of-findings}{%
+\subsubsection{Evaluation of findings}\label{evaluation-of-findings}}
+
+From our analysis, we expected to find that our predictors as a whole
+would be able to accurately classify someone\textquotesingle s likelihood to be a
+cannabis user. This was expected due to the fact that all of our
+predictors have been linked to cannabis use in past research, in
+particular, personality traits such as Openness and Agreeableness.
+Previous research has shown that there is a correlation between
+personality and drug use (Terracciano et al, 2008). The use of the
+predictor of nicotine, as well as age has also been documented where
+peer influence in adolescents has also been shown, where nicotine and
+cannabis were consumed in conjunction with each (Harold et al 2021).
+
+What we found matched our forecast: we were able to predict a person\textquotesingle s
+probability of using cannabis with a 79\% accuracy rate. Even though this
+rate is not as accurate as it has been in other studies and also not as
+high as we initially hoped, we believe it is high enough for us to say
+that our algorithm can be used in the future with a satisfactorily high
+degree of certainty in regards to its outputs.
+
+\hypertarget{limitations}{%
+\subsubsection{Limitations}\label{limitations}}
+
+Despite our findings, there are a few notable shortcomings, namely that
+we cannot deduce how much one variable alone, for example, nicotine use,
+affects predicting cannabis use; if we were interested in analyzing
+that, we would have to make many, many classifications with one variable
+paired with cannabis use at a time, which unfortunately would not be
+very practical. Additionally, another flaw, although to a lesser extent
+would be that our data is somewhat large and we have many predictors, so
+in choosing to use K-nn classification (which does not perform well in
+those conditions), our model's accuracy may have been hindered. Lastly,
+it\textquotesingle s also important to remember that this data was collected mainly
+from Western countries such as the UK and the US, which likely impact
+how generalizable our model will be. Thus, if we decide to use this same
+algorithm with a data set from a non-Western origin, we must be
+extremely cautious when evaluating the results.
+
+\hypertarget{impact}{%
+\subsubsection{Impact}\label{impact}}
+
+By identifying potential predictors for cannabis use such as personality
+traits or demographics, this may lead to impacts like being able to
+identify potential marijuana users, as well as aid in public health
+modeling and future policy-making regarding Cannabis. This can also
+potentially spread awareness and education of the drug across
+communities experiencing drug-use crises.
+
+Our findings may also lead to future questions e.g.~Are the types of
+people most likely to use Cannabis also likely to use stronger, or
+possibly illicit drugs? Do the type of people unlikely to use Cannabis
+not use any other drugs, or do they prefer some other drug, and if so,
+which one(s)? Is the likelihood to use a certain drug strongly linked to
+other demographic factors such as income or country of origin? Finding
+the answers to these questions may help countries to not only shape
+their internal approaches to drug-related public policies but also
+better inform international committees, such as the United Nations
+Office on Drugs and Crime, on their policy recommendations.
+
+\hypertarget{references}{%
+\subsection{\texorpdfstring{\textbf{References}}{References}}\label{references}}
+
+\end{document}
