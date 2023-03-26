@@ -1,5 +1,7 @@
 library(testthat)
+library(tidymodels)
 source("./R/predict-script.R")
+source("./test/helper_predict-script.R")
 
 # Define the test cases for predict_drugs_workflow
 test_that("predict_drugs_workflow returns the expected output", {
