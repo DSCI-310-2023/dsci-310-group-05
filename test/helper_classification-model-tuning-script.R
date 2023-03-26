@@ -18,16 +18,21 @@ min_neighbors <- 5
 max_neighbors <- 10
 response_var <- "Cannabis"
 not_response_var <- "Test"
-grid <- create_grid(min_neighbors, max_neighbors)
-spec <- create_knn_spec(weight_func = "rectangular")
-recipe <- create_recipe(df, response_var)
-vfold <- create_vfold(df, v_good, response_var)
+grid <- tibble::tibble(neighbors = seq(min_neighbors, max_neighbors))
+spec <- parsnip::nearest_neighbor(
+  weight_func = "rectangular",
+  neighbors = tune()
+) %>%
+  parsnip::set_engine("kknn") %>%
+  parsnip::set_mode("classification")
 
-test_recipe <- create_recipe(df, response_var)
-test_spec <- create_knn_spec("rectangular")
-test_vfold <- create_vfold(df, v, response_var)
-test_gridvals <- create_grid(min_neighbors, max_neighbors)
+recipe <- recipes::recipe(as.formula(paste0(response_var, " ~ .")),
+  data = df
+) %>%
+  recipes::step_scale(all_predictors()) %>%
+  recipes::step_center(all_predictors())
 
+vfold <- rsample::vfold_cv(df, v = v_good, strata = response_var)
 
 # expected function outputs
 
