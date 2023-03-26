@@ -61,7 +61,7 @@ drugs_real_spec <- nearest_neighbor(weight_func = "rectangular", neighbors = 23)
   set_engine("kknn") %>%
   set_mode("classification")
 
-drugs_real_workflow <- workflow() %>% 
+drugs_real_workflow <- workflow() %>%
   add_recipe(drugs_recipe) %>% 
   add_model(drugs_real_spec) %>% 
   fit(data = drug_data)

@@ -20,7 +20,7 @@ library(docopt)
 
 opt <- docopt(doc)
 
-# saving the results data from the modeling script as a local variable for easy usage
+# saving the results data from the modeling script as a local variable to make it easier to use
 drugs_pred <- read.csv(opt$pred_data_path)
 
 # calculating the accuracy of the classification model
