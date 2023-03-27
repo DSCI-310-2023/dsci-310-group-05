@@ -12,7 +12,7 @@ This project aims to predict cannabis use based on demographic patterns, persona
 
 ## **Report** ##
 
-The analysis report can be found [here](/doc/Cannabis_Use_Prediction_Analysis.htm).
+The analysis report can be found [here](/doc/Cannabis_Use_Prediction_Analysis.html).
 
 
 ## **Usage** ##
