@@ -1,0 +1,5 @@
+"Nicotine","Cannabis","n","label"
+"no","yes",147,"Neither"
+"no","no",467,"Cannabis only"
+"yes","yes",602,"Nicotine only"
+"yes","no",196,"Both"
