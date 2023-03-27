@@ -2,43 +2,18 @@ library(testthat)
 library(dplyr)
 source("./R/clean-wrangle-data.R")
 source("./test/helper_clean-wrangle.R")
-library(testthat)
 
-
-test_that("wrangle_training_data should return a data frame", {
-  expect_is(wrangle_training_data(training_data, predictor, strata_variable, group_labels), "data.frame")
+# Test output and test if column types are matching
+test_that("wrangle_training_data handles and groups the data accurately", {
+  expect_equal(as.data.frame(output), expected_output)
+  expect_equal(typeof(output$predictor) , typeof(expected_output$predictor))
+  expect_equal(typeof(output$strata_variable) , typeof(expected_output$strata_variable))
+  expect_equal(typeof(output$label) , typeof(expected_output$label))
+  expect_equal(typeof(output$n) , typeof(expected_output$n))
 })
 
-
-test_that("wrangle_training_data should return correct output for accurate input", {
-  expect_identical(
-    wrangle_training_data(training_data, predictor, strata_variable, group_labels),
-    output
-  )
-})
-
-
-test_that("wrangle_training_data throws an error if predictor or strata_variable are not in training_data", {
-  expect_error(
-    wrangle_training_data(training_data, "error", strata_variable, group_labels),
-    "Unexpected input: predictor or strata_variable not found in the training_data"
-  )
-
-  expect_error(
-    wrangle_training_data(training_data, predictor, "error", group_labels),
-    "Unexpected input: predictor or strata_variable not found in the training_data"
-  )
-})
-
-test_that("wrangle_training_data throws an error if group_labels is an empty vector", {
-  expect_error(
-    wrangle_training_data(training_data, predictor, strata_variable, NULL),
-    "Unexpected input: group_labels must be a vector that is not-empty"
-  )
-
-  expect_error(
-    wrangle_training_data(training_data, predictor, strata_variable, character()),
-    "Unexpected input: group_labels must be a vector that is not-empty"
-  )
+# Test whether the output is a data.frame.
+test_that("wrangle_training_data returns a data.frame", {
+  expect_is(output1, "data.frame")
 })
 

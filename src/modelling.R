@@ -67,7 +67,7 @@ drugs_real_workflow <- workflow() %>%
   fit(data = drug_data)
 
 # calculating how well the training data predicts the testing data 
-predict_drugs_workflow(drugs_real_workflow, testing_data)
+drugs_pred <- predict_drugs_workflow(drugs_real_workflow, testing_data)
 
 # saving the modified training data, workflow and prediction results as data frames
 write.csv(drug_data, opt$dest_std_training_data, row.names = FALSE)
