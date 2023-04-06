@@ -1,12 +1,14 @@
-#'Split the dataset into training and testing sets based on a strata variable
+#' Split the dataset into training and testing sets based on a strata variable
 #'
 #' Splits the data into testing/training and ensures variables are appropriate
 #' for classification algorithm
 #'
 #'
 #' @param data_set the data set to be used for the algorithm
-#' @param strata_variable a string representing the variable that will be set as the strata in initial_split
-#' @param predictor a string representing the variable to be used as the predictor for the algorithm
+#' @param strata_variable a string representing the variable that will be set
+#'                        as the strata in initial_split
+#' @param predictor a string representing the variable to be used as the
+#'                  predictor for the algorithm
 #'
 #' @return a list containing the training and the testing data sets
 #' @example split_dataset(drugs, Cannabis, Nicotine)
