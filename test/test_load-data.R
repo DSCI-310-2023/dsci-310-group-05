@@ -1,6 +1,6 @@
 library(testthat)
 
-# Load expected input and output data, and initial_data script
+# Load expected input and output data, and initial_data script from R folder
 source("./R/load-data-script.R")
 source("./test/helper_load-data.R")
 

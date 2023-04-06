@@ -1,7 +1,7 @@
 #' Initial data loading and column naming
 #'
-#' This function reads in raw data from a specified URL and assigns column names
-#' to the data. The resulting data frame is then written to the data folder.
+#' This function reads in raw data from a specified URL and assigns given column 
+#' names to the data. The resulting data is then written to the data folder.
 #'
 #' @param url the URL in which the data set is housed
 #' @param col_names names of the columns
