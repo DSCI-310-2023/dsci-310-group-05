@@ -196,12 +196,14 @@ Now, we pull the final accuracy rate for our classifier.
 
 ```{r accuracy, echo=FALSE, message=FALSE, warning= FALSE}
 drug_acc <- read.csv("../data/accuracy.csv")
+drug_acc_rounded <- round(drug_acc,3)
+drug_acc_rounded_percentage <- paste0(round(drug_acc,3) * 100, "%")
 ```
 
 `r drug_acc`
 
-The result is an accuracy of approximately 0.809 or 80.9%.
-
+The result is an accuracy of approximately `r drug_acc_rounded` or
+`r drug_acc_rounded_percentage`.
 
 # **Discussion**
 
@@ -211,7 +213,7 @@ By training our model by performing a 5-fold cross-validation and using
 23 as the number of neighbours in our K-nearest neighbours
 classification algorithm, we were able to predict one\'s probability of
 using Cannabis based on age, gender, education and personality scores
-with a 80.9% accuracy.
+with a `r drug_acc_rounded_percentage` accuracy.
 
 ## Evaluation of findings
 
@@ -227,10 +229,10 @@ peer influence in adolescents has also been shown, where nicotine and
 cannabis were consumed in conjunction with each [@herold2021association].
 
 What we found matched our forecast: we were able to predict a person\'s
-probability of using cannabis with a 81% accuracy rate. Even though this
-rate is not as accurate as it has been in other studies and also not as
-high as we initially hoped, we believe it is high enough for us to say
-that our algorithm can be used in the future with a satisfactorily high
+probability of using cannabis with a `r drug_acc_rounded_percentage` accuracy 
+rate. Even though this rate is not as accurate as it has been in other studies 
+and also not as high as we initially hoped, we believe it is high enough for us
+to say that our algorithm can be used in the future with a satisfactorily high
 degree of certainty in regards to its outputs.
 
 ## Limitations
