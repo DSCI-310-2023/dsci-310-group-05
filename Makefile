@@ -24,7 +24,7 @@ data/accuracy.csv: src/findings.R
 	Rscript src/findings.R --pred_data_path=data/results_data.csv --dest_accuracy_data=data/accuracy.csv
 
 
-# render R Markdown report in HTML and PDF
+# render R Markdown report in HTML
 doc/Cannabis_Use_Prediction_Analysis.html: doc/Cannabis_Use_Prediction_Analysis.Rmd doc/references.bib
 	Rscript -e "rmarkdown::render('doc/Cannabis_Use_Prediction_Analysis.Rmd', c('bookdown::html_document2'))"
 
