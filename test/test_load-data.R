@@ -7,7 +7,7 @@ source("./test/helper_load-data.R")
 # Test cases
 test_that("initial_data function reads data and sets column names correctly", {
   # Call the function
-  actual_data <- initial_data("./data/data_set.csv", col_names)
+  actual_data <- initial_data("./data/raw/data_set.csv", col_names)
 
   # Test that the data has the expected number of observations
   expect_equal(nrow(actual_data), nrow(expected_data))
