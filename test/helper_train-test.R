@@ -25,3 +25,5 @@ split <- initial_split(data_set, prop = 0.75, strata = strata_variable)
 expected_training_data <- training(split)
 expected_testing_data <- testing(split)
 
+
+

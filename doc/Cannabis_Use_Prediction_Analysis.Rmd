@@ -108,7 +108,7 @@ cannabis. As mentioned before, this choice was guided by the fact that
 these two drugs are similar in terms of context and method of use.
 
 ``` {r raw-data-table, echo = FALSE,  message=FALSE, warning=FALSE}
-raw_data <- read_csv("../data/drug_consumption.csv")
+raw_data <- read_csv("../data/raw/drug_consumption.csv")
 knitr::kable(head(raw_data), align = "l", caption = "Summary table of the entire dataset.")
 ```
 
@@ -126,7 +126,7 @@ be considered a user, so we will mutate the values CL0, CL1, and CL2 to
 no (does not use) and the rest to yes (used recently/still using). 
 
 ``` {r drugs-table, echo = FALSE,  message=FALSE, warning=FALSE}
-drugs <- read_csv("../data/drug_user_consumption.csv")
+drugs <- read_csv("../data/processed/drug_user_consumption.csv")
 knitr::kable(head(drugs), align ="l", caption = "Summary table of the dataset used in the analysis.")
 ```
 
@@ -138,7 +138,7 @@ used as a predictor, we want the testing set to have nicotine as a
 numeric variable. 
 
 ``` {r cannabis-and-nicotine-table, echo = FALSE,  message=FALSE, warning=FALSE}
-cannabis_and_nicotine <- read_csv("../data/processed_training_data.csv")
+cannabis_and_nicotine <- read_csv("../data/processed/processed_training_data.csv")
 knitr::kable(head(cannabis_and_nicotine), align ="l", caption = "Table of the number of individuals (n) that fall into each label.")
 ```
 
@@ -168,7 +168,7 @@ that use both nicotine and cannabis than people who use strictly only
 cannabis (more blue than red data points).
 
 ``` {r drug-data-table, echo = FALSE,  message=FALSE, warning=FALSE}
-drug_data <- read_csv("../data/standardized_training_data.csv")
+drug_data <- read_csv("../data/processed/standardized_training_data.csv")
 knitr::kable(head(drug_data), align = "l", caption = "Table of used predictors with Nicotine standardized, where Nicotine is 1 indicates nicotine use and Nicotine is 0 indicates no nicotine use.")
 ```
 
@@ -177,7 +177,7 @@ knitr::kable(head(drug_data), align = "l", caption = "Table of used predictors w
 Firstly, we must tune our classifier in order to find the optimal number of neighbours to be used in our model.
 
 ``` {r drugs-workflow-table, echo = FALSE,  message=FALSE, warning=FALSE}
-drugs_workflow <- read_csv("../data/drugs_workflow_data.csv")
+drugs_workflow <- read_csv("../data/processed/drugs_workflow_data.csv")
 knitr::kable(head(drugs_workflow), align ="l", caption = "Table of accuracy estimates and standard error outputs corresponding to a few different values of K-neighbours.")
 ```
 
@@ -188,20 +188,22 @@ knitr::include_graphics("../results/neighbors_and_accuracy_graph.png")
 From the graph plotted in Figure \@ref(fig:acc-plot), we can see that the numbers of neighbours that give us the highest mean accuracy is 23 and 24. Because the drop in accuracy from 24 to 25 is much greater than the drop from 23 to 22, we have decided to use 23 as our K. It should be noted that using some other values for K would be just as reasonable in this case, e.g. 21, since the difference in accuracy is less than 1%.
 
 ``` {r drugs-pred-table, echo = FALSE,  message=FALSE, warning=FALSE}
-drugs_pred <- read_csv("../data/results_data.csv")
+drugs_pred <- read_csv("../data/processed/results_data.csv")
 knitr::kable(head(drugs_pred), caption = "Table of prediction outputs for cannabis use. Predictors except Nicotine are scaled and therefore do not provide a clear indication of what predictor values contribute to suggesting that someone would use/not use cannabis. Nicotine = 1 indicates nicotine use and Nicotine = 0 indicates no nicotine use.")
 ```
 
 Now, we pull the final accuracy rate for our classifier.
 
 ```{r accuracy, echo=FALSE, message=FALSE, warning= FALSE}
-drug_acc <- read.csv("../data/accuracy.csv")
+drug_acc <- read.csv("../data/processed/accuracy.csv")
+drug_acc_rounded <- round(drug_acc,3)
+drug_acc_rounded_percentage <- paste0(round(drug_acc,3) * 100, "%")
 ```
 
 `r drug_acc`
 
-The result is an accuracy of approximately 0.809 or 80.9%.
-
+The result is an accuracy of approximately `r drug_acc_rounded` or
+`r drug_acc_rounded_percentage`.
 
 # **Discussion**
 
@@ -211,7 +213,7 @@ By training our model by performing a 5-fold cross-validation and using
 23 as the number of neighbours in our K-nearest neighbours
 classification algorithm, we were able to predict one\'s probability of
 using Cannabis based on age, gender, education and personality scores
-with a 80.9% accuracy.
+with a `r drug_acc_rounded_percentage` accuracy.
 
 ## Evaluation of findings
 
@@ -227,10 +229,10 @@ peer influence in adolescents has also been shown, where nicotine and
 cannabis were consumed in conjunction with each [@herold2021association].
 
 What we found matched our forecast: we were able to predict a person\'s
-probability of using cannabis with a 81% accuracy rate. Even though this
-rate is not as accurate as it has been in other studies and also not as
-high as we initially hoped, we believe it is high enough for us to say
-that our algorithm can be used in the future with a satisfactorily high
+probability of using cannabis with a `r drug_acc_rounded_percentage` accuracy 
+rate. Even though this rate is not as accurate as it has been in other studies 
+and also not as high as we initially hoped, we believe it is high enough for us
+to say that our algorithm can be used in the future with a satisfactorily high
 degree of certainty in regards to its outputs.
 
 ## Limitations

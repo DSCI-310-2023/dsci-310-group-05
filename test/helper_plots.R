@@ -1,7 +1,11 @@
 library(ggplot2)
+library(dplyr)
 
 # Defining input data for horizontal-hist function
-test_data_1 <- data.frame(x = c(1, 2, 3, 4), y = c(10, 20, 30, 40), color = c("red", "blue", "green", "red"))
+test_data_1 <- data.frame(
+  x = c(1, 2, 3, 4), y = c(10, 20, 30, 40),
+  color = c("red", "blue", "green", "red")
+)
 x_var <- "x"
 y_var <- "y"
 color_var <- "color"
@@ -12,9 +16,11 @@ plot_title <- "Test Plot"
 plot_width <- 6
 plot_height <- 4
 
-test_data_2 <- data.frame(.metric = rep("accuracy", 30), 
-                          neighbors = 1:30,
-                          mean = rnorm(30))
+test_data_2 <- data.frame(
+  .metric = rep("accuracy", 30),
+  neighbors = 1:30,
+  mean = rnorm(30)
+)
 
 # Defining expected output for horizontal_hist function
 options(repr.plot.width = plot_width, repr.plot.height = plot_height)
@@ -40,9 +46,3 @@ expected_accuracy_plot <- ggplot(test_data_2, aes(x = neighbors, y = mean)) +
   labs(x = "Neighbors", y = "Mean", title = "Accuracy Plot") +
   theme(text = element_text(size = 20)) +
   scale_x_continuous(breaks = c(1:30))
-
-
-
-
-
-

@@ -12,7 +12,7 @@ This project aims to predict cannabis use based on demographic patterns, persona
 
 ## **Report** ##
 
-The analysis report can be found [here](/analysis/Cannabis-Use-Prediction_Analysis.ipynb).
+The analysis report can be found [here](/doc/Cannabis_Use_Prediction_Analysis.html).
 
 
 ## **Usage** ##
@@ -37,12 +37,16 @@ We use a Docker container image to make the computational environment for this p
 http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3
 ``` 
 into the web browser to access JupyterLab.
-- You can now access the entire project
 
-#### *To run the analysis within JupyterLab*
-- In JupyterLab, navigate to ```Cannabis-Use-Prediction_Analysis.ipynb``` under the ```analysis``` folder.
-- Click __Kernel > Restart and run all__ to run the entire analysis.
+- You can now acess the entire project
 
+- Open the terminal in JupterLab and run the following command: 
+
+  ```make all```
+
+- To remove all files created by the previous command and run, run the following command:
+
+  ```make clean```
 
 ## __Dependencies:__
 
@@ -55,6 +59,10 @@ These are the dependencies needed to run the analysis:
 - testthat=3.1.6
 - kknn=1.3.1
 - ggplot2=3.4.0
+- docopt=0.7.1
+- bookdown=0.33
+- knitr=1.4.1
+- forcats=1.00
 - purrr=1.0.1
 - rsample=1.1.1
 

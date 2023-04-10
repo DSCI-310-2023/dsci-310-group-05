@@ -16,4 +16,3 @@ expected_data <- data.frame(
   col2 = c(4, 5, 6),
   col3 = c(7, 8, 9)
 )
-
