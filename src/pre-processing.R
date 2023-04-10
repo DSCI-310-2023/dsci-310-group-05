@@ -30,8 +30,7 @@ library(docopt)
 library(tidymodels)
 library(stringr)
 library(haven)
-source("R/train-test-script.R")
-source("R/clean-wrangle-data.R")
+library(group05pkg)
 
 opt <- docopt(doc)
 

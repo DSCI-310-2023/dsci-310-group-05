@@ -15,3 +15,5 @@ RUN Rscript -e "remotes::install_version('bookdown', repos = 'https://cloud.r-pr
 RUN Rscript -e "remotes::install_version('knitr', repos = 'https://cloud.r-project.org')"
 RUN Rscript -e "remotes::install_version('docopt', repos = 'https://cloud.r-project.org')"
 RUN Rscript -e "remotes::install_version('forcats', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "remotes::install_version('devtools', repos = 'https://cloud.r-project.org')"
+RUN Rscript -e "devtools::install_github('DaliaAh/dsci-310-group-05-pkg')"

@@ -20,7 +20,7 @@ Options:
 library(tidyverse)
 library(ggplot2)
 library(docopt)
-source("R/plots-script.R")
+library(group05pkg)
 
 opt <- docopt(doc)
 
