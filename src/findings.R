@@ -4,8 +4,7 @@
 doc <- "This script calculates the accuracy of the classifiers from the dataset
         with predictions
 
-Usage: src/findings.R --pred_data_path=<file_path> 
---dest_accuracy_data=<dest_path>
+Usage: src/findings.R --pred_data_path=<file_path> --dest_accuracy_data=<dest_path>
 
 Options:
     --pred_data_path=<file_path>        Path to the results data

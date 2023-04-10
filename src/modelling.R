@@ -3,10 +3,7 @@
 
 doc <- "This script tunes the model before performing the modelling
 
-Usage: src/modelling.R --training_data_path=<file_path>
---testing_data_path=<file_path> --dest_std_training_data=<dest_path>
---dest_workflow_data=<dest_path> --fig_out_dir=<out_dir>
---dest_results_data=<dest_path>
+Usage: src/modelling.R --training_data_path=<file_path> --testing_data_path=<file_path> --dest_std_training_data=<dest_path> --dest_workflow_data=<dest_path> --fig_out_dir=<out_dir> --dest_results_data=<dest_path>
 
 Options:
     --training_data_path=<file_path>        Path to the training data
