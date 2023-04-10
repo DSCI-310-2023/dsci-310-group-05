@@ -33,20 +33,28 @@ We use a Docker container image to make the computational environment for this p
    ```
 
 - Once the container is launched, copy the URL from the terminal that looks like: 
-``` 
-http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3
-``` 
+``` http://127.0.0.1:8888/lab?token=ca965902616c582833fad36c546dc2c5ea2693ae9c5474e3``` 
 into the web browser to access JupyterLab.
 
 - You can now acess the entire project
 
-- Open the terminal in JupterLab and run the following command: 
+- Open the terminal in JupterLab and run the following command to ensure that you are starting from a fresh environment: 
 
-  ```make all```
+  ```
+  make clean
+  ```
+  
+- Run the following command to run the analysis fi;e: 
 
+  ```
+  make all -B
+  ```
+  
 - To remove all files created by the previous command and run, run the following command:
 
-  ```make clean```
+  ```
+  make clean
+  ```
 
 ## __Dependencies:__
 
