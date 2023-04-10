@@ -7,8 +7,7 @@ doc <- "This script accesses some of the datasets created in the second
         the modeling. The plots generated are saved within the mentioned
         directory as png files.
 
-Usage: src/visualizations.R --processed_data_path=<file_path>
---training_data_path=<file_path> --plot_out_dir=<out-dir>
+Usage: src/visualizations.R --processed_data_path=<file_path> --training_data_path=<file_path> --plot_out_dir=<out-dir>
 
 Options:
     --processed_data_path=<file_path>   Path to the processed training data

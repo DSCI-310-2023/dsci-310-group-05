@@ -14,11 +14,7 @@ doc <- "This script accesses the dataset downloaded in the first script
         mentioned as group_label.
 
 
-Usage: src/pre-processing.R --file_path=<file_path>
---strata_variable=<strata_variable>
---predictor_variable=<predictor_variable>
---dest_drugs_path=<dest_path> --dest_test_path=<dest_test_path>
---dest_train_path=<dest_train_path> --dest_processed_data=<dest_processed_data>
+Usage: src/pre-processing.R --file_path=<file_path> --strata_variable=<strata_variable> --predictor_variable=<predictor_variable> --dest_drugs_path=<dest_path> --dest_test_path=<dest_test_path> --dest_train_path=<dest_train_path> --dest_processed_data=<dest_processed_data>
 
 Options:
     --file_path=<file_path>                       Path of where the raw data is
