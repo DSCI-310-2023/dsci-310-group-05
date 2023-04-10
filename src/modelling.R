@@ -19,9 +19,7 @@ library(tidyverse)
 library(tidymodels)
 library(ggplot2)
 library(docopt)
-source("R/plots-script.R")
-source("R/classification_model_tuning_script.R")
-source("R/predict-script.R")
+library(group05pkg)
 
 opt <- docopt(doc)
 

@@ -73,6 +73,8 @@ These are the dependencies needed to run the analysis:
 - forcats=1.00
 - purrr=1.0.1
 - rsample=1.1.1
+- devtools=2.4.5
+- group05pkg=0.0.0.9000
 
 
 ## **Licences:** ##
